@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hankerz\\Desktop\\Airbnbfinal\\Airbnbfinal.csproj": {}
+    "D:\\ITI\\GraduationProject\\Airbnb\\Airbnbfinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hankerz\\Desktop\\Airbnbfinal\\Airbnbfinal.csproj": {
+    "D:\\ITI\\GraduationProject\\Airbnb\\Airbnbfinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hankerz\\Desktop\\Airbnbfinal\\Airbnbfinal.csproj",
+        "projectUniqueName": "D:\\ITI\\GraduationProject\\Airbnb\\Airbnbfinal.csproj",
         "projectName": "Airbnbfinal",
-        "projectPath": "C:\\Users\\hankerz\\Desktop\\Airbnbfinal\\Airbnbfinal.csproj",
+        "projectPath": "D:\\ITI\\GraduationProject\\Airbnb\\Airbnbfinal.csproj",
         "packagesPath": "C:\\Users\\hankerz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hankerz\\Desktop\\Airbnbfinal\\obj\\",
+        "outputPath": "D:\\ITI\\GraduationProject\\Airbnb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,19 +50,25 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[6.0.14, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[6.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[6.0.14, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.11, )"
+              "version": "[6.0.14, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.12, )"
             }
           },
           "imports": [
