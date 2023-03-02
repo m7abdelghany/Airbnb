@@ -1,21 +1,36 @@
-﻿using Airbnbfinal.Models;
+﻿using Airbnb.Models;
+using Airbnbfinal.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Airbnbfinal.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private Graduationproject1Context db;
 
-        public HomeController(ILogger<HomeController> logger)
+        //private readonly ILogger<HomeController> _logger;
+
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+        public HomeController(Graduationproject1Context db)
         {
-            _logger = logger;
+            this.db = db;
+        }
+
+        public IActionResult getAll()
+        {
+            
+            List <Hotel> H=db.Hotels.Include(a=>a.Images).Include(a=>a.Rooms).ToList();
+            return View(H);
         }
 
         public IActionResult Index()
         {
-            //---------------//
+            
             return View();
         }
 
