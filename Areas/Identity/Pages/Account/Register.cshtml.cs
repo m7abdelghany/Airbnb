@@ -104,6 +104,10 @@ namespace Airbnbfinal.Areas.Identity.Pages.Account
             public string LastName { get; set; }
             [Range(18,70)]
             public int Age { get; set; }
+            [StringLength(12,ErrorMessage ="username length must be between 5 and 12 ",MinimumLength =3)]
+            public string UserName { get; set; }
+            
+            public int PhoneNumber { get; set; }
             
         }
 
@@ -120,7 +124,7 @@ namespace Airbnbfinal.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { FirstName=Input.FirstName, LastName=Input.LastName ,Email=Input.Email,Age=Input.Age,UserName=Input.Email };
+                var user = new ApplicationUser() { FirstName=Input.FirstName, LastName=Input.LastName ,Email=Input.Email,Age=Input.Age,UserName=Input.UserName,PhoneNumber=Input.PhoneNumber.ToString() };
                 // await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 // await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
