@@ -1,7 +1,17 @@
 using Airbnb.Models;
 using Airbnbfinal.Data;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
+using Stripe;
 
 namespace Airbnbfinal
 {
@@ -9,6 +19,8 @@ namespace Airbnbfinal
     {
         public static void Main(string[] args)
         {
+            
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -51,7 +63,31 @@ namespace Airbnbfinal
                 pattern: "{controller=Home}/{action=Index}/{id?}");
             app.MapRazorPages();
 
+
+            //WebHost.CreateDefaultBuilder(args)
+            ////   UseUrls("http://0.0.0.0:4242").
+            ////  UseWebRoot("public").
+            //// UseStartup<Startup>()
+            // .Build();
+            
+
             app.Run();
+        }
+        public class Startup
+        {
+            public void ConfigurationServices(IServiceCollection services)
+            {
+                services.AddMvc();
+            }
+            public void configure(IApplicationBuilder app, IWebHostEnvironment environment)
+            {
+                StripeConfiguration.ApiKey = "sk_test_51Mi93ZBg5knc7RZACnawaUcCGuGpBTthOglNgOIg1IkdrYQe1u6XntEmdRbdoNBYJJ4HnYWg9mnxHWZE0Xy4b82i00gyZ5enqQ";
+                if (environment.IsDevelopment()) app.UseDeveloperExceptionPage();
+                app.UseRouting();
+                app.UseStaticFiles();
+                app.UseEndpoints(endpoints=> endpoints.MapControllers());
+
+            }
         }
     }
 }

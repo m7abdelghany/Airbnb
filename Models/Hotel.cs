@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Airbnbfinal.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Airbnb.Models
@@ -21,6 +22,7 @@ namespace Airbnb.Models
         }
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
         [StringLength(100)]
         public string Name { get; set; }
@@ -29,6 +31,9 @@ namespace Airbnb.Models
         public string Address { get; set; }
         [StringLength(255)]
         public string Phone { get; set; }
+        [Range(1, 50)]
+        public int Capacity { get; set; } = 0;
+
         [StringLength(100)]
         public string Email { get; set; }
         [StringLength(100)]
@@ -39,7 +44,7 @@ namespace Airbnb.Models
         public int? Category_Id { get; set; }
         [StringLength(450)]
         public string Hotel_admin { get; set; }
-
+    
         [ForeignKey("Category_Id")]
         [InverseProperty("Hotels")]
         public virtual Category Category { get; set; }
@@ -58,5 +63,13 @@ namespace Airbnb.Models
         [ForeignKey("Hotel_Id")]
         [InverseProperty("Hotels")]
         public virtual ICollection<Facility> Facilities { get; set; }
+
+        //public virtual ICollection<HotelUnavailableDay> UnAvailableDays { get; set; }
+
+        [ForeignKey(nameof(User))]
+        public string UserId { get; set; }
+        public virtual AppUser User { get; set; }
+        public decimal Price { set; get; } = 0;
+
     }
 }

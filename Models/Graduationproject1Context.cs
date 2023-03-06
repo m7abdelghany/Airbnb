@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Airbnbfinal.Models.Payment;
 
 namespace Airbnb.Models
 {
@@ -159,5 +160,7 @@ namespace Airbnb.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<CreditCard> CreditCard { get; set; }
     }
 }
