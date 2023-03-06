@@ -27,7 +27,7 @@ namespace Airbnbfinal.Controllers
             }
             public IActionResult Index()
             {
-                return View("Book");
+                return View("index");
             }
 
             public IActionResult book(int id, string checkIn, string checkOut, int guests)
@@ -49,7 +49,8 @@ namespace Airbnbfinal.Controllers
 
                 if (!hotelService.IsHotelAvailable(id, checkInDate, checkOutDate))
                 {
-                    return BadRequest();
+                  return BadRequest();
+                
                 }
 
                 ViewBag.checkIn = checkInDate;
