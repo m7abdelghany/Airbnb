@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Airbnb.Models
 {
-    public partial class Graduationproject1Context : DbContext
+    public partial  class Graduationproject1Context : DbContext
     {
         public Graduationproject1Context()
         {
@@ -18,6 +18,8 @@ namespace Airbnb.Models
         {
         }
 
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<City> Cities { get; set; }
@@ -40,6 +42,22 @@ namespace Airbnb.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<AspNetRole>(entity =>
+            {
+                entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedName] IS NOT NULL)");
+            });
+
+            modelBuilder.Entity<AspNetUser>(entity =>
+            {
+                entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedUserName] IS NOT NULL)");
+
+                entity.Property(e => e.Gender).HasDefaultValueSql("(CONVERT([bit],(0)))");
+            });
+
             modelBuilder.Entity<Booking>(entity =>
             {
                 entity.Property(e => e.BookingId).ValueGeneratedNever();
@@ -90,6 +108,11 @@ namespace Airbnb.Models
                     .HasForeignKey(d => d.City_Id)
                     .HasConstraintName("FK_Hotel_City");
 
+                entity.HasOne(d => d.Hotel_adminNavigation)
+                    .WithMany(p => p.Hotels)
+                    .HasForeignKey(d => d.Hotel_admin)
+                    .HasConstraintName("FK_Hotel_AspNetUsers");
+
                 entity.HasMany(d => d.Facilities)
                     .WithMany(p => p.Hotels)
                     .UsingEntity<Dictionary<string, object>>(
@@ -137,12 +160,15 @@ namespace Airbnb.Models
 
             modelBuilder.Entity<Review>(entity =>
             {
-                entity.Property(e => e.ReviewId).ValueGeneratedNever();
-
                 entity.HasOne(d => d.Hotel)
                     .WithMany(p => p.Reviews)
                     .HasForeignKey(d => d.Hotel_Id)
                     .HasConstraintName("FK_Reviews_Hotel");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Reviews)
+                    .HasForeignKey(d => d.User_Id)
+                    .HasConstraintName("FK_Reviews_AspNetUsers");
             });
 
             modelBuilder.Entity<Room>(entity =>

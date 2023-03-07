@@ -46,6 +46,9 @@ namespace Airbnb.Models
         [ForeignKey("City_Id")]
         [InverseProperty("Hotels")]
         public virtual City City { get; set; }
+        [ForeignKey("Hotel_admin")]
+        [InverseProperty("Hotels")]
+        public virtual AspNetUser Hotel_adminNavigation { get; set; }
         [InverseProperty("Hotel")]
         public virtual ICollection<Booking> Bookings { get; set; }
         [InverseProperty("hotel")]

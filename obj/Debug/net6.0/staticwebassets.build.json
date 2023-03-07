@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fs9eum/Rj18AWgvSMGrPuECO9B2wUNEqdGd39VNmKE4=",
+  "Hash": "ZkS1Sc3eg/v0wYGPKng0SOEbJaQQI5rxaz14DI4u1cc=",
   "Source": "Airbnbfinal",
   "BasePath": "_content/Airbnbfinal",
   "Mode": "Default",
@@ -4724,6 +4724,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\photos\\9-5.jpg"
+    },
+    {
+      "Identity": "D:\\ITI\\GraduationProjectLast\\Airbnb\\wwwroot\\photos\\logo.png",
+      "SourceId": "Airbnbfinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ITI\\GraduationProjectLast\\Airbnb\\wwwroot\\",
+      "BasePath": "_content/Airbnbfinal",
+      "RelativePath": "photos/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\logo.png"
+    },
+    {
+      "Identity": "D:\\ITI\\GraduationProjectLast\\Airbnb\\wwwroot\\photos\\title.png",
+      "SourceId": "Airbnbfinal",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ITI\\GraduationProjectLast\\Airbnb\\wwwroot\\",
+      "BasePath": "_content/Airbnbfinal",
+      "RelativePath": "photos/title.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\photos\\title.png"
     }
   ]
 }

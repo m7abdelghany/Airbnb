@@ -28,6 +28,25 @@ namespace Airbnbfinal.Controllers
             return View(H);
         }
 
+        public IActionResult Search(string searching)
+        {
+            if (!string.IsNullOrEmpty(searching))
+            {
+                List<Hotel> H = db.Hotels.Include(a => a.City).Include(a => a.Images).Where(a => a.City.CityName == searching || a.Name == searching).ToList();
+
+                return View(H);
+            }
+            else
+            {
+                return View();
+            }
+
+        }
+
+
+
+
+
         public IActionResult Privacy()
         {
             return View();

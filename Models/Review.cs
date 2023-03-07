@@ -16,10 +16,14 @@ namespace Airbnb.Models
         [StringLength(255)]
         public string Review1 { get; set; }
         public int? Hotel_Id { get; set; }
-        public int? Guest_Id { get; set; }
+        [StringLength(450)]
+        public string User_Id { get; set; }
 
         [ForeignKey("Hotel_Id")]
         [InverseProperty("Reviews")]
         public virtual Hotel Hotel { get; set; }
+        [ForeignKey("User_Id")]
+        [InverseProperty("Reviews")]
+        public virtual AspNetUser User { get; set; }
     }
 }
