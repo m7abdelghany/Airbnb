@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Airbnb.Models
 {
-    public partial  class Graduationproject1Context : DbContext
+    public partial class Graduationproject1Context : DbContext
     {
         public Graduationproject1Context()
         {
@@ -173,8 +173,6 @@ namespace Airbnb.Models
 
             modelBuilder.Entity<Room>(entity =>
             {
-                entity.Property(e => e.RoomId).ValueGeneratedNever();
-
                 entity.HasOne(d => d.Hotel)
                     .WithMany(p => p.Rooms)
                     .HasForeignKey(d => d.Hotel_Id)
