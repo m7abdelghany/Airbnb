@@ -9,105 +9,109 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Airbnbfinal
 build_property.RootNamespace = Airbnbfinal
-build_property.ProjectDir = D:\program setup\cmder\Airbnb_Edit\
+build_property.ProjectDir = A:\pull req airbnb\Airbnb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\program setup\cmder\Airbnb_Edit
+build_property.MSBuildProjectDirectory = A:\pull req airbnb\Airbnb
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/Account/AccessDenied.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/Account/Login.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/Account/Logout.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/Account/Register.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/_ViewImports.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Areas/Identity/Pages/_ViewStart.cshtml]
+[A:/pull req airbnb/Airbnb/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/DetailsView/Index.cshtml]
+[A:/pull req airbnb/Airbnb/Views/DetailsView/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0YWlsc1ZpZXdcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Home/Create.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Home/Facilities.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Home/Facilities.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGYWNpbGl0aWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Home/ImagesAdd.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Home/ImagesAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbWFnZXNBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Home/Index.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Home/Privacy.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Home/RoomAdd.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Home/RoomAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSb29tQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Home/Search.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Home/Search.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZWFyY2guY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Shared/Error.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Shared/_LoginPartial.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Shared/_ValidationScriptsPartial.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/_ViewImports.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Stripe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RyaXBlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[A:/pull req airbnb/Airbnb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/_ViewStart.cshtml]
+[A:/pull req airbnb/Airbnb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/program setup/cmder/Airbnb_Edit/Views/Shared/_Layout.cshtml]
+[A:/pull req airbnb/Airbnb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-tk5iq9i4iq
