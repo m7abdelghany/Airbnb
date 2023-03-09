@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Create";
 }
+<h1>First, Add all about your <span style="color:#F12954">Hotel</span>.</h1>
 
 <form method="post" enctype="multipart/form-data">
     <label asp-for="Name" class="form-label"></label>
@@ -32,7 +33,7 @@
     <input asp-for="Rate" class="form-control" type="text" placeholder="Hotel rating">
     <span asp-validation-for="Rate"></span>
 
-    <label asp-for="Is_Available" class="form-label">Is your hotel available?(yes/no)</label>
+    <label asp-for="Is_Available" class="form-label">Is your hotel available?(True/False)</label>
     <input asp-for="Is_Available" class="form-control" type="text" placeholder="Hotel availability">
     <span asp-validation-for="Is_Available"></span>
 
@@ -47,7 +48,8 @@
     <label asp-for="Hotel_admin" class="form-label"></label>
     <input asp-for="Hotel_admin" class="form-control" type="text" placeholder="Hotel admin id">
     <span asp-validation-for="Hotel_admin"></span>
-
+    <hr />
+  
    @* <label class="form-label">Facilities</label>
     <select name="Facilities" class="form-select" multiple asp-items="ViewBag.fac"></select>*@
 
