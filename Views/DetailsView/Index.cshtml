@@ -180,18 +180,41 @@
         <h5 class="card-title">Reviews</h5>
         @foreach (var item in Model.Reviews)
             {
-        <h5  class="card-text" style="columns:2;padding-left:0px;color:deeppink" >
+        <h6  class="card-text" style="columns:2;padding-left:0px;color:deeppink" >
             
-                @item.User.UserName
-               <hr />
-        </h5>
-        <p>@item.Review1</p>
-                
+               @try
+                {
+                    @item.User.UserName
+                }
+                catch (Exception e)
+                {
 
+                    <h1>@item.User.UserName</h1>
+                }
+                    
+                
+                
+               
+        </h6>
             
-            
+        <p>@item.Review1</p>
+            <hr /> 
             }
-       @* <p>@Model.ReviewDetail.Review1</p>*@
+
+
+        @* add review*@
+
+        <form method="post" asp-action="addReview" id="add-review-form" >
+        
+        <div class="mb-3">
+            
+                <input asp-for="ID" hidden />
+                
+                 <textarea  asp-action="addReview" name="rev" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your review..."></textarea>
+                
+                <input asp-action="addReview" type="submit" class="btn btn-primary center-btn" style="background-color:#F12954;" value="Add Review">
+        </div>
+        </form>
     </div>
 </div>
 
