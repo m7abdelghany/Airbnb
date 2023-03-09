@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "A:\\pull req airbnb\\Airbnb\\Airbnbfinal.csproj": {}
+    "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj": {}
   },
   "projects": {
-    "A:\\pull req airbnb\\Airbnb\\Airbnbfinal.csproj": {
+    "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\pull req airbnb\\Airbnb\\Airbnbfinal.csproj",
+        "projectUniqueName": "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj",
         "projectName": "Airbnbfinal",
-        "projectPath": "A:\\pull req airbnb\\Airbnb\\Airbnbfinal.csproj",
-        "packagesPath": "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\",
-        "outputPath": "A:\\pull req airbnb\\Airbnb\\obj\\",
+        "projectPath": "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj",
+        "packagesPath": "C:\\Users\\ITI\\.nuget\\packages\\",
+        "outputPath": "D:\\program setup\\cmder\\Airbnb_Edit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Shrouk Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ITI\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,10 +69,6 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.12, )"
-            },
-            "Stripe.net": {
-              "target": "Package",
-              "version": "[41.0.0, )"
             }
           },
           "imports": [
@@ -94,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
