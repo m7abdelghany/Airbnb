@@ -1,5 +1,6 @@
 using Airbnb.Models;
 using Airbnbfinal.Data;
+using Airbnbfinal.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,15 @@ namespace Airbnbfinal
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+            builder.Services.AddDbContext<Graduationproject1Context>(options => {
+            options.UseLazyLoadingProxies();
+            options.UseSqlServer(connectionString);
+
+                
+        });
+
+            builder.Services.AddStripeInfrastructre(builder.Configuration);
+            
             builder.Services.AddDbContext<Graduationproject1Context>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -30,6 +40,7 @@ namespace Airbnbfinal
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
+                
             }
             else
             {
