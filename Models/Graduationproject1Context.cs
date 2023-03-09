@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Airbnb.Models
 {
-    public partial  class Graduationproject1Context : DbContext
+    public partial class Graduationproject1Context : DbContext
     {
         public Graduationproject1Context()
         {
@@ -27,6 +27,7 @@ namespace Airbnb.Models
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<Image> Images { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
         public virtual DbSet<PaymentType> PaymentTypes { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
@@ -151,6 +152,25 @@ namespace Airbnb.Models
                     .WithMany(p => p.Invoices)
                     .HasForeignKey(d => d.PaymentType_Id)
                     .HasConstraintName("FK_Invoice_PaymentType");
+            });
+
+            modelBuilder.Entity<Message>(entity =>
+            {
+                entity.Property(e => e.TimeOfSeen)
+                    .IsRowVersion()
+                    .IsConcurrencyToken();
+
+                entity.HasOne(d => d.Hotelmanger)
+                    .WithMany(p => p.MessageHotelmangers)
+                    .HasForeignKey(d => d.HotelmangerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_AspNetUsers1");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.MessageUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_AspNetUsers");
             });
 
             modelBuilder.Entity<PaymentType>(entity =>

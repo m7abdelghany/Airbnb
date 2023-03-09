@@ -1,0 +1,143 @@
+﻿@model Airbnb.Models.AspNetUser
+@using System.Collections.Specialized;
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    NameValueCollection RecivedMessage = new NameValueCollection();
+    NameValueCollection SentMessage = new NameValueCollection();
+
+}
+<h1>
+    here is you messages  @ViewBag.username
+</h1>
+@*add userid and message in nameValue*@
+@foreach (var item in Model.MessageHotelmangers)
+{
+    RecivedMessage.Add(item.UserId, item.Message1);
+}
+<form method="post" asp-action="Messages">
+    @foreach (var item in RecivedMessage.AllKeys)
+    {
+        <input asp-for="Id==item" />
+        <div class="chat-container">
+            <div class="chat-messages">
+                recived messages
+                @foreach (var i in RecivedMessage.GetValues(item))
+                {
+                    <p>@i</p>
+                }
+            </div>
+            <div class="chat-input">
+                <input asp-action="Contact" name="Msg" type="text" placeholder="Type your message">
+                <button asp-action="Messages" type="submit">Send</button>
+            </div>
+        </div>
+    }
+</form>
+
+
+
+
+@*for the sent messages*@
+@foreach (var item in Model.MessageUsers)
+{
+    SentMessage.Add(item.HotelmangerId, item.Message1);
+}
+<form method="post" asp-action="Messages">
+    @foreach (var item in SentMessage.AllKeys)
+    {
+        <input asp-for="Id==item" />
+        <div class="chat-container">
+            <div class="chat-messages">
+                sent messages
+                @foreach (var i in SentMessage.GetValues(item))
+                {
+                    <p>@Model.UserName  @i</p>
+                }
+            </div>
+            <div class="chat-input">
+                <input asp-action="Contact" name="Msg" type="text" placeholder="Type your message">
+                
+                <button asp-action="Messages" type="submit">Send</button>
+            </div>
+        </div>
+    }
+</form>
+
+
+
+
+
+<style>
+    .chat-container {
+        width: 400px;
+        height: 500px;
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .chat-messages {
+        height: 400px;
+        padding: 10px;
+        overflow-y: scroll;
+    }
+
+    .chat-input {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        padding: 10px;
+    }
+
+        .chat-input input {
+            flex-grow: 1;
+            height: 30px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        .chat-input button {
+            height: 30px;
+            padding: 0 10px;
+            border: none;
+            border-radius: 3px;
+            background-color: #4285f4;
+            color: #fff;
+            cursor: pointer;
+        }
+</style>
+<script>
+    const messagesContainer = document.querySelector('.chat-messages');
+    const input = document.querySelector('.chat-input input');
+    const button = document.querySelector('.chat-input button');
+
+    button.addEventListener('click', sendMessage);
+
+    function sendMessage() {
+        const message = input.value;
+        input.value = '';
+        displayMessage(message, true);
+    }
+
+    function displayMessage(message, isUser) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        if (isUser) {
+            messageElement.classList.add('user-message');
+        } else {
+            messageElement.classList.add('bot-message');
+        }
+        messageElement.innerText = message;
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+
+</script>
