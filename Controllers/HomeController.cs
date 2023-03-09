@@ -93,11 +93,7 @@ namespace Airbnbfinal.Controllers
             ViewBag.fac = new SelectList(db.Facilities.ToList(), "FacilityId", "FacilityType");
             return View();
         }
-        [HttpPost]
-        public IActionResult Create(Hotel h /*,int[] FacilitiesToAdd*/)
-        {
-            SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
-            ViewBag.city = cities;
+       
 
         [HttpPost]
         public IActionResult Facilities( int[] facilit)
@@ -122,49 +118,7 @@ namespace Airbnbfinal.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //public IActionResult ImagesAdd(List<IFormFile> Himg,Image imag)
-        //{
-        //    //int myData = (int)TempData["Hid"];
-        //    //TempData.Keep("Hid");
-
-        //    //Hotel h = db.Hotels.Include(a => a.Images).FirstOrDefault(a => a.ID == myData);
-
-        //    //if (Himg == null)
-        //    //{
-        //    //    ModelState.AddModelError("", "No image uploaded, Please upload image");
-
-        //    //}
-        //    //else
-        //    //{
-        //    //    //upload image
-        //    //    foreach (var item in Himg)
-        //    //    {
-        //    //        string filename = h.ID.ToString() + "-" + Himg.FileName.Split(".").Last();
-        //    //        imag.img = filename;
-        //    //        using (var fs = System.IO.File.Create("wwwroot/photos/" + filename))
-        //    //        {
-        //    //            Himg.CopyTo(fs);
-        //    //        }
-        //    //    }
-
-
-        //    //}
-        //    //if (ModelState.IsValid)
-        //    //{
-
-        //    //    db.Add(std);
-        //    //    return RedirectToAction("index", "student");
-        //    //}
-        //    //else
-        //    //{
-        //    //    return View(std);
-        //    //}
-
-
-
-
-        //}
+        
 
         [HttpPost]
         public async Task<IActionResult> ImagesAdd( List<IFormFile> files)
@@ -199,21 +153,7 @@ namespace Airbnbfinal.Controllers
 
         }
 
-        //[HttpGet]
-        //public IActionResult RoomAdd()
-        //{
-        //    return View();
-        //}
-
-        //[HttpPost]
-        //public IActionResult RoomAdd(int type)
-        //{
-        //    ViewBag.t = type;
-        //    return RedirectToAction("index");
-        //}
-
-           // return View(h);
-        }
+        
 
 
         public IActionResult Privacy()
