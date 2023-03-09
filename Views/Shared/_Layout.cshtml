@@ -22,8 +22,11 @@
                             <img class="accountimg1" src="~/photos/hamburger.svg">
                             <img class="accountimg2" src="~/photos/account.svg">
                         </button>
-                        <div class="droplistcontent">
+                        <div class="droplistcontent dropdown-menu">
                             <partial name="_LoginPartial" />
+                            <a asp-action="Create" id="hiddenAnchor" class="dropdown-item">Create </a>
+                            <a id="hiddenAnchor" class="dropdown-item">Message</a>
+                            <a asp-area="Identity" asp-page="/Account/Logout" id="hiddenAnchor" class="dropdown-item">Log out </a>
                         </div>
                     </div>
                 </div>

@@ -11102,11 +11102,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj",
+      "projectUniqueName": "D:\\program setup\\cmder\\Airbnb_Editf\\Airbnbfinal.csproj",
       "projectName": "Airbnbfinal",
-      "projectPath": "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj",
+      "projectPath": "D:\\program setup\\cmder\\Airbnb_Editf\\Airbnbfinal.csproj",
       "packagesPath": "C:\\Users\\ITI\\.nuget\\packages\\",
-      "outputPath": "D:\\program setup\\cmder\\Airbnb_Edit\\obj\\",
+      "outputPath": "D:\\program setup\\cmder\\Airbnb_Editf\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ITI\\AppData\\Roaming\\NuGet\\NuGet.Config",

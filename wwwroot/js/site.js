@@ -9,3 +9,12 @@ function openpopup() {
 function closepopup() {
     popup.classList.remove("open-popup");
 }
+function toggleDropdown() {
+    var hiddenAnchor = document.getElementById("hiddenAnchor");
+    if (hiddenAnchor.style.display === "none") {
+        hiddenAnchor.style.display = "block";
+    } else {
+        hiddenAnchor.style.display = "none";
+    }
+}
+

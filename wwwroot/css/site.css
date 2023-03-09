@@ -126,7 +126,7 @@ body {
 .nav_header {
     top: 1.3rem;
     position: absolute;
-    margin-left: 81rem;
+    margin-left: 65rem;
     display: flex;
     justify-content: flex-end;
 }
@@ -142,15 +142,8 @@ body {
     cursor: pointer;
     text-decoration: none;
     color: rgb(34, 34, 34);
-    height: 48px;
+    height: 48px; 
 }
-
-
-.dropbtn {
-    float: left;
-    overflow: hidden;
-}
-
 .account {
     border: 1px solid var(--grey-med);
     height: 45px;
@@ -188,21 +181,28 @@ body {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
-.navreg a {
-    cursor: pointer;
-    float: none;
-    color: black;
-    padding: 8px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
+    .droplistcontent a {
+        cursor: pointer;
+        float: none;
+        color: black;
+        padding: 8px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    .navreg a {
+        cursor: pointer;
+        float: none;
+        color: black;
+        padding: 8px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
 
 .droplistcontent a:hover {
     background-color: var(--grey-light);
 }
-
 .droplist:hover .droplistcontent {
     display: block;
 }

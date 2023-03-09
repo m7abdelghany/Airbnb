@@ -13,9 +13,10 @@
     </li>
 }
 else
-{        <div class="navreg">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
-         </div>
+    {
+       <div class="navreg">
+      <a class=" dropdown-item " asp-area="Identity" asp-page="/Account/Register" onclick="toggleDropdown()">Register</a>
+      <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Login" onclick="toggleDropdown()">Login</a>
+        </div>
 }      
 </ul>
