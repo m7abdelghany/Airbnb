@@ -20,7 +20,7 @@
 <form method="post" asp-action="Messages">
     @foreach (var item in RecivedMessage.AllKeys)
     {
-        <input asp-for="Id==item" />
+        
         <div class="chat-container">
             <div class="chat-messages">
                 recived messages
@@ -30,7 +30,7 @@
                 }
             </div>
             <div class="chat-input">
-                <input asp-action="Contact" name="Msg" type="text" placeholder="Type your message">
+                <input asp-action="Messages" name="Msg" type="text" placeholder="Type your message">
                 <button asp-action="Messages" type="submit">Send</button>
             </div>
         </div>
@@ -48,7 +48,7 @@
 <form method="post" asp-action="Messages">
     @foreach (var item in SentMessage.AllKeys)
     {
-        <input asp-for="Id==item" />
+        
         <div class="chat-container">
             <div class="chat-messages">
                 sent messages
@@ -58,7 +58,7 @@
                 }
             </div>
             <div class="chat-input">
-                <input asp-action="Contact" name="Msg" type="text" placeholder="Type your message">
+                <input asp-action="Messages" name="Msg" type="text" placeholder="Type your message">
                 
                 <button asp-action="Messages" type="submit">Send</button>
             </div>

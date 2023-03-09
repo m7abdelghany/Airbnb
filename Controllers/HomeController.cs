@@ -183,14 +183,14 @@ namespace Airbnbfinal.Controllers
         }
         [Authorize]
         [HttpPost]
-        public async Task <IActionResult> Messages(int ID,string Msg)
+        public async Task <IActionResult> Messages(string Msg)
         {
             var user = await userManager.GetUserAsync(User);
             var username = user.UserName;
             ViewBag.username = username;
             var userid = user.Id;
             AspNetUser Husers = db.AspNetUsers.Include(a => a.MessageHotelmangers).FirstOrDefault(a => a.Id == userid);
-            Message m = new Message() { UserId=userid,HotelmangerId=ID.ToString(),Message1=Msg};
+            Message m = new Message() { UserId=userid,HotelmangerId=userid,Message1=Msg};
             db.Messages.Add(m);
             db.SaveChanges();
             return View(Husers);
