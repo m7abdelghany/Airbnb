@@ -5,6 +5,12 @@
 @{
     var index = 0;
 }
+<form asp-action="Search" method="post" class="header_search">
+    <input class="text-search" placeholder="Hotel" asp-controller="Home" asp-action="Search" name="searching"></input>
+    <button class="header-search  searchIcon btn " asp-controller="Home" asp-action="Search" asp-route-name="Name">
+        <img src="~/photos/searchIcon.svg" alt="iconsearh">
+    </button>
+</form>
 <a asp-action="Create">Create </a>
 <a asp-action="Messages">Messages</a>
 <div class="container text-center">
