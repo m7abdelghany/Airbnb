@@ -1,5 +1,6 @@
 using Airbnb.Models;
 using Airbnbfinal.Data;
+using Airbnbfinal.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +19,11 @@ namespace Airbnbfinal
             builder.Services.AddDbContext<Graduationproject1Context>(options => {
             options.UseLazyLoadingProxies();
             options.UseSqlServer(connectionString);
+
+                
         });
+
+            builder.Services.AddStripeInfrastructre(builder.Configuration);
             
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -33,6 +38,7 @@ namespace Airbnbfinal
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
+                
             }
             else
             {
