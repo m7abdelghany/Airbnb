@@ -55,6 +55,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Message]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[PaymentType]",
          "ObjectType": 0
       },
@@ -71,11 +75,11 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "DESKTOP-JDM2K7J.Graduationproject1",
+   "UiHint": "DESKTOP-0F1A685.Graduationproject1",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,
-   "UseDateOnlyTimeOnly": false,
+   "UseDateOnlyTimeOnly": true,
    "UseDbContextSplitting": false,
    "UseFluentApiOnly": false,
    "UseHandleBars": false,
