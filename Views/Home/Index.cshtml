@@ -17,6 +17,25 @@
     </button>
 </form>
 <a asp-action="Create">Create </a>
+
+@*Hotel Category*@
+<form asp-action="category">
+<div class="container text-center" style="margin-bottom:30px">
+<div class="btn-group" role="group" aria-label="Basic example">
+
+        <button type="button" class="btn btn-secondary" style="background-color:#F12954" ><a asp-action="category" style="text-decoration:none;color:inherit;"    asp-route-cid="1" >Top Rated </a> </button>
+            <button type="button" class="btn btn-secondary" style="background-color:#F12954"><a asp-action="category" style="text-decoration:none;color:inherit;" asp-route-cid="2"> Best for wedding</a>  </button>
+            <button type="button" class="btn btn-secondary" style="background-color:#F12954"><a asp-action="category" style="text-decoration:none;color:inherit;" asp-route-cid="3"> best resturants </a> </button>
+            <button type="button" class="btn btn-secondary" style="background-color:#F12954"><a asp-action="category" style="text-decoration:none;color:inherit;" asp-route-cid="4"> romanic weekends </a> </button>
+            <button type="button" class="btn btn-secondary" style="background-color:#F12954"><a asp-action="category" style="text-decoration:none;color:inherit;" asp-route-cid="5"> family friendly  </a></button>
+            <button type="button" class="btn btn-secondary" style="background-color:#F12954"><a asp-action="category" style="text-decoration:none;color:inherit;" asp-route-cid="6">honeymoons    </a>  </button>
+            <button type="button" class="btn btn-secondary" style="background-color:#F12954"><a asp-action="category" style="text-decoration:none;color:inherit;" asp-route-cid="7">  pet friendly  </a> </button>
+            <button type="button" class="btn btn-secondary" style="background-color:#F12954"><a asp-action="category" style="text-decoration:none;color:inherit;" asp-route-cid="8"> best spa   </a>  </button>
+
+</div>
+</div>
+</form>
+@*hotel list*@
 <a asp-action="Messages">Messages</a>
 @if (signInManger.IsSignedIn(User)&& User.IsInRole("Admin"))
 {
@@ -30,14 +49,14 @@
         {
             <a asp-controller="DetailsView"  asp-route-id="@item.ID" style="text-decoration:none;color:inherit;">
                 <div class="col">
-                 
-                    <div id="carouselExampleControls-@index" class="carousel slide "  data-ride="false">
+
+                    <div id="carouselExampleControls-@index" class="carousel slide rounded shadow " data-ride="false">
 
                     <div class="carousel-inner" >
                         @foreach (var x in item.Images)
                         {
                             <div  class="carousel-item @(x==item.Images.First()?"active":"")" >
-                                <img src=@x.img class="d-block w-100 img-thumbnail" alt="...">
+                                    <img src=@x.img class="d-block w-100 img-thumbnail" alt="..." >
                             </div>
                         }
                     </div>
