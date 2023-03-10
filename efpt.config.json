@@ -79,11 +79,11 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "DESKTOP-L4MM5EK.Graduationproject1",
+   "UiHint": "DESKTOP-0F1A685.Graduationproject1",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,
-   "UseDateOnlyTimeOnly": false,
+   "UseDateOnlyTimeOnly": true,
    "UseDbContextSplitting": false,
    "UseFluentApiOnly": false,
    "UseHandleBars": false,

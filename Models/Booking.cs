@@ -18,10 +18,10 @@ namespace Airbnb.Models
 
         [Key]
         public int BookingId { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? DateFrom { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? DateTo { get; set; }
+        [NotMapped]
+        public DateOnly? DateFrom { get; set; }
+        [NotMapped]
+        public DateOnly? DateTo { get; set; }
         public int? RoomCount { get; set; }
         [Column(TypeName = "money")]
         public decimal? TotalPrice { get; set; }
