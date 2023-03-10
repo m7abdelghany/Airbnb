@@ -10500,24 +10500,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hankerz\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Antr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI\\GraduationProjectLast\\Airbnb\\Airbnbfinal.csproj",
+      "projectUniqueName": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
       "projectName": "Airbnbfinal",
-      "projectPath": "D:\\ITI\\GraduationProjectLast\\Airbnb\\Airbnbfinal.csproj",
-      "packagesPath": "C:\\Users\\hankerz\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI\\GraduationProjectLast\\Airbnb\\obj\\",
+      "projectPath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
+      "packagesPath": "C:\\Users\\Antr\\.nuget\\packages\\",
+      "outputPath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\hankerz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Antr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10593,7 +10588,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
