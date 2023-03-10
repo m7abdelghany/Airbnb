@@ -1,5 +1,6 @@
 ﻿using Airbnb.Models;
 using Airbnbfinal.Data;
+using Airbnbfinal.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -35,9 +36,15 @@ namespace Airbnbfinal.Controllers
             //    u+= "\n";
 
             //}
+            var hotels = db.Hotels.ToList();
             var users = db.AspNetUsers.ToList();
+            AdminViewModel adminView = new AdminViewModel
+            {
+                users = users,
+                Hotel = hotels,
+            };
            
-            return View(users);
+            return View(adminView);
         }
     }
 }
