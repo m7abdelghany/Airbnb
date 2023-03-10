@@ -23,7 +23,7 @@ namespace Airbnb.Models
         [Column("Message")]
         public string Message1 { get; set; }
         public bool? Seen { get; set; }
-        public byte[] TimeOfSeen { get; set; }
+        public DateTime TimeOfSeen { get; set; }
 
         [ForeignKey("HotelmangerId")]
         [InverseProperty("MessageHotelmangers")]

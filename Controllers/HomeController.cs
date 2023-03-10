@@ -16,7 +16,7 @@ namespace Airbnbfinal.Controllers
         private Graduationproject1Context db;
         private UserManager<ApplicationUser> userManager;
 
-        public HomeController(Graduationproject1Context db, UserManager<ApplicationUser> userManager) 
+        public HomeController(Graduationproject1Context db, UserManager<ApplicationUser> userManager)
         {
             this.db = db;
             this.userManager = userManager;
@@ -52,14 +52,14 @@ namespace Airbnbfinal.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            SelectList cities = new SelectList(db.Cities.ToList(), "CityId","CityName");
+            SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
             ViewBag.city = cities;
 
             SelectList categ = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
             ViewBag.category = categ;
 
-            
-            
+
+
             return View();
         }
         [HttpPost]
@@ -80,8 +80,8 @@ namespace Airbnbfinal.Controllers
             {
                 db.Add(h);
                 db.SaveChanges();
-            TempData["Hid"] = h.ID;
-            return RedirectToAction("Facilities");
+                TempData["Hid"] = h.ID;
+                return RedirectToAction("Facilities");
             }
 
             return View(h);
@@ -93,10 +93,10 @@ namespace Airbnbfinal.Controllers
             ViewBag.fac = new SelectList(db.Facilities.ToList(), "FacilityId", "FacilityType");
             return View();
         }
-       
+
 
         [HttpPost]
-        public IActionResult Facilities( int[] facilit)
+        public IActionResult Facilities(int[] facilit)
         {
             int myData = (int)TempData["Hid"];
             TempData.Keep("Hid");
@@ -104,7 +104,7 @@ namespace Airbnbfinal.Controllers
             ViewBag.Id = myData;
 
             Hotel h = db.Hotels.Include(a => a.Facilities).FirstOrDefault(a => a.ID == myData);
-            
+
 
             foreach (var item in facilit)
             {
@@ -114,14 +114,14 @@ namespace Airbnbfinal.Controllers
             return RedirectToAction("ImagesAdd");
         }
         [HttpGet]
-        public  IActionResult ImagesAdd()
+        public IActionResult ImagesAdd()
         {
             return View();
         }
-        
+
 
         [HttpPost]
-        public async Task<IActionResult> ImagesAdd( List<IFormFile> files)
+        public async Task<IActionResult> ImagesAdd(List<IFormFile> files)
         {
             int myData = (int)TempData["Hid"];
             TempData.Keep("Hid");
@@ -153,7 +153,7 @@ namespace Airbnbfinal.Controllers
 
         }
 
-        
+
 
 
         public IActionResult Privacy()
@@ -166,34 +166,66 @@ namespace Airbnbfinal.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        [Authorize]
-        [HttpGet]
-        public async Task< IActionResult> Messages()
+        //[Authorize]
+        //[HttpGet]
+        //public async Task< IActionResult> Messages()
+        //{
+        //    var user = await userManager.GetUserAsync(User);
+
+        //    var username =user.UserName;
+        //    ViewBag.username=username;
+        //    var userid = user.Id;
+        //   string id = "1";
+        //    AspNetUser Husers = db.AspNetUsers.Include(a=>a.MessageHotelmangers).FirstOrDefault(a=>a.Id==userid);
+        //    AspNetUser Rusers = db.AspNetUsers.Include(a=>a.MessageUsers).First(a=>a.Id==userid);
+
+        //    return View(Husers);
+        //}
+
+        public async Task<IActionResult> Messages()
         {
             var user = await userManager.GetUserAsync(User);
-
-            var username =user.UserName;
-            ViewBag.username=username;
             var userid = user.Id;
-           string id = "1";
-            AspNetUser Husers = db.AspNetUsers.Include(a=>a.MessageHotelmangers).FirstOrDefault(a=>a.Id==userid);
-            AspNetUser Rusers = db.AspNetUsers.Include(a=>a.MessageUsers).First(a=>a.Id==userid);
-            
-            return View(Husers);
+            var username = user.UserName;
+            ViewBag.Username = username;
+            var messages = await db.Messages
+         .Where(m => m.HotelmangerId == userid)
+         .ToListAsync();
+            var groupedMessages = new Dictionary<string, List<Message>>();
+            foreach (var message in messages)
+            {
+                if (!groupedMessages.ContainsKey(message.UserId))
+                {
+                    groupedMessages[message.UserId] = new List<Message>();
+                }
+                groupedMessages[message.UserId].Add(message);
+            }
+            var viewModel = new ViewMessagesViewModel
+            {
+                UserId = userid,
+                GroupedMessages = groupedMessages
+            };
+
+            return View(viewModel);
+
         }
+
         [Authorize]
         [HttpPost]
-        public async Task <IActionResult> Messages(string Msg)
+        public IActionResult SendMessage(string receiverId, string senderId, string message)
         {
-            var user = await userManager.GetUserAsync(User);
-            var username = user.UserName;
-            ViewBag.username = username;
-            var userid = user.Id;
-            AspNetUser Husers = db.AspNetUsers.Include(a => a.MessageHotelmangers).FirstOrDefault(a => a.Id == userid);
-            Message m = new Message() { UserId=userid,HotelmangerId=userid,Message1=Msg};
-            db.Messages.Add(m);
+            var newMessage = new Message
+            {
+                HotelmangerId = receiverId,
+                UserId = senderId,
+                Message1 = message,
+                
+            };
+
+            db.Messages.Add(newMessage);
             db.SaveChanges();
-            return View(Husers);
+
+            return RedirectToAction("Messages", new { userId = receiverId });
         }
     }
 }

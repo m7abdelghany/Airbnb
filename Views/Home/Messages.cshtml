@@ -1,143 +1,114 @@
-﻿@model Airbnb.Models.AspNetUser
-@using System.Collections.Specialized;
+﻿@model Airbnbfinal.Models.ViewMessagesViewModel
 
-@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-    NameValueCollection RecivedMessage = new NameValueCollection();
-    NameValueCollection SentMessage = new NameValueCollection();
 
-}
-<h1>
-    here is you messages  @ViewBag.username
-</h1>
-@*add userid and message in nameValue*@
-@foreach (var item in Model.MessageHotelmangers)
-{
-    RecivedMessage.Add(item.UserId, item.Message1);
-}
-<form method="post" asp-action="Messages">
-    @foreach (var item in RecivedMessage.AllKeys)
-    {
-        
-        <div class="chat-container">
-            <div class="chat-messages">
-                recived messages
-                @foreach (var i in RecivedMessage.GetValues(item))
-                {
-                    <p>@i</p>
-                }
+<div class="chat-container">
+    <div class="chat-header">
+        <h1>Messages for User @ViewBag.username</h1>
+    </div>
+    <div class="chat-body">
+        @foreach (var sender in Model.GroupedMessages)
+        {
+            <div class="chat-message-group">
+                <div class="chat-message-group-header">
+                    <span>@sender.Key</span>
+                </div>
+                <div class="chat-message-group-body">
+                    @foreach (var message in sender.Value)
+                    {
+                        <div class="chat-message @((message.UserId == Model.UserId) ? "outgoing" : "incoming")">
+                            <div class="chat-message-text">@message.Message1</div>
+                            <div class="chat-message-timestamp">@message.TimeOfSeen.ToString("yyyy-MM-dd HH:mm:ss")</div>
+                        </div>
+                    }
+                </div>
+                <div class="chat-message-group-footer">
+                    <form method="post" asp-action="SendMessage">
+                        <input type="hidden" name="receiverId" value="@Model.UserId" />
+                        <input type="hidden" name="senderId" value="@sender.Key" />
+                        <div class="chat-input-group">
+                            <input type="text" name="message" class="chat-input" placeholder="Type a message" required />
+                            <button type="submit" class="chat-send-button"><i class="fa fa-paper-plane"></i>Send</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="chat-input">
-                <input asp-action="Messages" name="Msg" type="text" placeholder="Type your message">
-                <button asp-action="Messages" type="submit">Send</button>
-            </div>
-        </div>
-    }
-</form>
-
-
-
-
-@*for the sent messages*@
-@foreach (var item in Model.MessageUsers)
-{
-    SentMessage.Add(item.HotelmangerId, item.Message1);
-}
-<form method="post" asp-action="Messages">
-    @foreach (var item in SentMessage.AllKeys)
-    {
-        
-        <div class="chat-container">
-            <div class="chat-messages">
-                sent messages
-                @foreach (var i in SentMessage.GetValues(item))
-                {
-                    <p>@Model.UserName  @i</p>
-                }
-            </div>
-            <div class="chat-input">
-                <input asp-action="Messages" name="Msg" type="text" placeholder="Type your message">
-                
-                <button asp-action="Messages" type="submit">Send</button>
-            </div>
-        </div>
-    }
-</form>
-
-
-
-
+        }
+    </div>
+</div>
 
 <style>
     .chat-container {
-        width: 400px;
-        height: 500px;
-        background-color: #f5f5f5;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
         overflow: hidden;
     }
 
-    .chat-messages {
-        height: 400px;
-        padding: 10px;
-        overflow-y: scroll;
-    }
-
-    .chat-input {
+    .chat-header {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        height: 50px;
-        padding: 10px;
+        padding: 16px;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #ccc;
+        font-size: 20px;
+        font-weight: bold;
     }
 
-        .chat-input input {
-            flex-grow: 1;
-            height: 30px;
-            border: 1px solid #ddd;
-            border-radius: 3px;
-            padding: 5px;
-            margin-right: 10px;
-        }
-
-        .chat-input button {
-            height: 30px;
-            padding: 0 10px;
-            border: none;
-            border-radius: 3px;
-            background-color: #4285f4;
-            color: #fff;
-            cursor: pointer;
-        }
-</style>
-<script>
-    const messagesContainer = document.querySelector('.chat-messages');
-    const input = document.querySelector('.chat-input input');
-    const button = document.querySelector('.chat-input button');
-
-    button.addEventListener('click', sendMessage);
-
-    function sendMessage() {
-        const message = input.value;
-        input.value = '';
-        displayMessage(message, true);
+    .chat-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        overflow-y: auto;
     }
 
-    function displayMessage(message, isUser) {
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('message');
-        if (isUser) {
-            messageElement.classList.add('user-message');
-        } else {
-            messageElement.classList.add('bot-message');
-        }
-        messageElement.innerText = message;
-        messagesContainer.appendChild(messageElement);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    .chat-message-group {
+        margin-bottom: 16px;
     }
 
+    .chat-message-group-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: bold;
+    }
 
-</script>
+    .chat-message {
+        display: flex;
+        flex-direction: column;
+        max-width: 80%;
+        padding: 8px;
+        margin-bottom: 8px;
+        border-radius: 4px;
+    }
+
+    .chat-message-text {
+        margin-bottom: 4px;
+        font-size: 14px;
+    }
+
+    .chat-message-timestamp {
+        align-self: flex-end;
+        font-size: 12px;
+        color: #888;
+    }
+
+    .chat-message.incoming {
+        align-self: flex-start;
+        background-color: #f5f5f5;
+    }
+
+    .chat-message.outgoing {
+        align-self: flex-end;
+        background-color: #0084ff;
+        color: #fff;
+    }
+
+    .chat-message-group-footer {
+        display: flex;
+        justify-content: center;
