@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> signInManger;
+@inject UserManager<ApplicationUser> UserManager;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -27,6 +30,10 @@
                             <a asp-action="Create"  class="dropdown-item">Create </a>
                             <a asp-action="Messages" class="dropdown-item">Messages</a>
                    <a asp-area="Identity" asp-page="/Account/Logout"class="dropdown-item">Log out </a>
+                            @if (signInManger.IsSignedIn(User) && User.IsInRole("Admin"))
+                            {
+                                <a asp-action="Index" asp-controller="AdminDashBoard">admin</a>
+                            }
                         </div>
                     </div>
                 </div>

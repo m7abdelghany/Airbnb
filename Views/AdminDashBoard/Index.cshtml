@@ -1,4 +1,4 @@
-﻿@model List<Airbnb.Models.AspNetUser>
+﻿@model AdminViewModel
 @using Microsoft.AspNetCore.Identity;
 @inject SignInManager<ApplicationUser> signInManger;
 @inject UserManager<ApplicationUser> UserManager;
@@ -8,7 +8,7 @@
 *@
 @{
 }
-@foreach (var item in Model)
+@foreach (var item in Model.users)
 {
     <h1>@item.UserName</h1>
     <ul>

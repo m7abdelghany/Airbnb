@@ -19,6 +19,9 @@
     </nav>
     </main>
 
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
@@ -36,11 +39,17 @@
                 @Html.DisplayNameFor(model => model.Email)
             </th>
             
-            
+           
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.City)
             </th>
             
+            <th>
+                @Html.DisplayNameFor(model => model.Hotel_adminNavigation)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Facilities)
             </th>
@@ -64,7 +73,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
             
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryName)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.City.CityName)
             </td>

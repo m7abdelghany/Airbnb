@@ -14,6 +14,8 @@ namespace Airbnb.Models
         public AspNetUser()
         {
             Hotels = new HashSet<Hotel>();
+            MessageHotelmangers = new HashSet<Message>();
+            MessageUsers = new HashSet<Message>();
             Reviews = new HashSet<Review>();
         }
 
@@ -45,6 +47,10 @@ namespace Airbnb.Models
 
         [InverseProperty("Hotel_adminNavigation")]
         public virtual ICollection<Hotel> Hotels { get; set; }
+        [InverseProperty("Hotelmanger")]
+        public virtual ICollection<Message> MessageHotelmangers { get; set; }
+        [InverseProperty("User")]
+        public virtual ICollection<Message> MessageUsers { get; set; }
         [InverseProperty("User")]
         public virtual ICollection<Review> Reviews { get; set; }
     }
