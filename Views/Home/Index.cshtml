@@ -16,7 +16,7 @@
         <img src="~/photos/searchIcon.svg" alt="iconsearh">
     </button>
 </form>
-<a asp-action="Create">Create </a>
+
 
 @*Hotel Category*@
 <form asp-action="category">
@@ -36,7 +36,7 @@
 </div>
 </form>
 @*hotel list*@
-<a asp-action="Messages">Messages</a>
+
 @if (signInManger.IsSignedIn(User)&& User.IsInRole("Admin"))
 {
     <a asp-action="Index" asp-controller="AdminDashBoard">admin</a>

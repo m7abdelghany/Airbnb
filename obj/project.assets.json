@@ -10751,7 +10751,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Antr\\.nuget\\packages\\": {}
+    "C:\\Users\\hp\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10763,7 +10763,7 @@
       "outputPath": "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Antr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
