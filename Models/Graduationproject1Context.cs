@@ -158,6 +158,18 @@ namespace Airbnb.Models
             modelBuilder.Entity<Message>(entity =>
             {
                 entity.Property(e => e.TimeOfSeen).HasDefaultValueSql("(getdate())");
+
+                entity.HasOne(d => d.Hotelmanger)
+                    .WithMany(p => p.MessageHotelmangers)
+                    .HasForeignKey(d => d.HotelmangerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_AspNetUsers1");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.MessageUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_AspNetUsers");
             });
 
             modelBuilder.Entity<PaymentType>(entity =>
