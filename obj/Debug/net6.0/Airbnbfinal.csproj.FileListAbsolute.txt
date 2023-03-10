@@ -4280,3 +4280,4 @@ E:\.Net ITI\graduation project\9.3.2023\Airbnb\obj\Debug\net6.0\refint\Airbnbfin
 E:\.Net ITI\graduation project\9.3.2023\Airbnb\obj\Debug\net6.0\Airbnbfinal.pdb
 E:\.Net ITI\graduation project\9.3.2023\Airbnb\obj\Debug\net6.0\Airbnbfinal.genruntimeconfig.cache
 E:\.Net ITI\graduation project\9.3.2023\Airbnb\obj\Debug\net6.0\ref\Airbnbfinal.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Stripe.net.dll
