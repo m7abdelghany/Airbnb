@@ -53,6 +53,7 @@ namespace Airbnbfinal.Controllers
 
         }
         [HttpGet]
+        [Authorize]
         public IActionResult Create()
         {
             SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
@@ -66,6 +67,7 @@ namespace Airbnbfinal.Controllers
             return View();
         }
         [HttpPost]
+        [Authorize]
         public IActionResult Create(Hotel h /*,int[] FacilitiesToAdd*/)
         {
             SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
@@ -207,8 +209,9 @@ namespace Airbnbfinal.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        
 
+        [Authorize]
+        [HttpGet]
         public async Task<IActionResult> Messages()
         {
             var user = await userManager.GetUserAsync(User);
