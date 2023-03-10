@@ -1,0 +1,21 @@
+﻿@model List<Airbnb.Models.AspNetUser>
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> signInManger;
+@inject UserManager<ApplicationUser> UserManager;
+@*@inject RoleManager<ApplicationUser> RoleManager;*@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@foreach (var item in Model)
+{
+    <h1>@item.UserName</h1>
+    <ul>
+        <li>@item.FirstName</li>
+        <li>@item.LastName</li>
+        <li>@item.Id</li>
+        <li>@item.Email</li>
+        <li>@item.PhoneNumber</li>
+    </ul>
+}

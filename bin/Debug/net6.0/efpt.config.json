@@ -19,6 +19,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[AspNetUserRoles]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[AspNetUsers]",
          "ObjectType": 0
       },
@@ -55,6 +59,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Message]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[PaymentType]",
          "ObjectType": 0
       },
@@ -71,7 +79,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "DESKTOP-JDM2K7J.Graduationproject1",
+   "UiHint": "DESKTOP-L4MM5EK.Graduationproject1",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,

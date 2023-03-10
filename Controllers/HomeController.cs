@@ -15,11 +15,13 @@ namespace Airbnbfinal.Controllers
     {
         private Graduationproject1Context db;
         private UserManager<ApplicationUser> userManager;
+        SignInManager<ApplicationUser> signInManager;
 
-        public HomeController(Graduationproject1Context db, UserManager<ApplicationUser> userManager)
+        public HomeController(Graduationproject1Context db, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             this.db = db;
             this.userManager = userManager;
+            this.signInManager = signInManager;
         }
         //private readonly ILogger<HomeController> _logger;
 
@@ -166,21 +168,7 @@ namespace Airbnbfinal.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        //[Authorize]
-        //[HttpGet]
-        //public async Task< IActionResult> Messages()
-        //{
-        //    var user = await userManager.GetUserAsync(User);
-
-        //    var username =user.UserName;
-        //    ViewBag.username=username;
-        //    var userid = user.Id;
-        //   string id = "1";
-        //    AspNetUser Husers = db.AspNetUsers.Include(a=>a.MessageHotelmangers).FirstOrDefault(a=>a.Id==userid);
-        //    AspNetUser Rusers = db.AspNetUsers.Include(a=>a.MessageUsers).First(a=>a.Id==userid);
-
-        //    return View(Husers);
-        //}
+        
 
         public async Task<IActionResult> Messages()
         {

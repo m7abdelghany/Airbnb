@@ -8,22 +8,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Airbnb.Models
 {
-    [Table("Message")]
-    public partial class Message
+    [Keyless]
+    [Index("RoleId", Name = "IX_AspNetUserRoles_RoleId")]
+    public partial class AspNetUserRole
     {
-        [Key]
-        public int MessageId { get; set; }
         [Required]
         [StringLength(450)]
         public string UserId { get; set; }
         [Required]
-        [StringLength(450)]
-        public string HotelmangerId { get; set; }
-        [Required]
-        [Column("Message")]
-        public string Message1 { get; set; }
-        public bool? Seen { get; set; }
-        [Column(TypeName = "datetime")]
-        public DateTime TimeOfSeen { get; set; }
+        public string RoleId { get; set; }
+
+        [ForeignKey("RoleId")]
+        public virtual AspNetRole Role { get; set; }
+        [ForeignKey("UserId")]
+        public virtual AspNetUser User { get; set; }
     }
 }

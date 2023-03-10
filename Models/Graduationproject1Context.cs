@@ -20,6 +20,7 @@ namespace Airbnb.Models
 
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<City> Cities { get; set; }
@@ -156,21 +157,7 @@ namespace Airbnb.Models
 
             modelBuilder.Entity<Message>(entity =>
             {
-                entity.Property(e => e.TimeOfSeen)
-                    .IsRowVersion()
-                    .IsConcurrencyToken();
-
-                entity.HasOne(d => d.Hotelmanger)
-                    .WithMany(p => p.MessageHotelmangers)
-                    .HasForeignKey(d => d.HotelmangerId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Message_AspNetUsers1");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.MessageUsers)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Message_AspNetUsers");
+                entity.Property(e => e.TimeOfSeen).HasDefaultValueSql("(getdate())");
             });
 
             modelBuilder.Entity<PaymentType>(entity =>
@@ -193,8 +180,6 @@ namespace Airbnb.Models
 
             modelBuilder.Entity<Room>(entity =>
             {
-                entity.Property(e => e.RoomId).ValueGeneratedNever();
-
                 entity.HasOne(d => d.Hotel)
                     .WithMany(p => p.Rooms)
                     .HasForeignKey(d => d.Hotel_Id)
