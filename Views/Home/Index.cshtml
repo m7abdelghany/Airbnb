@@ -1,7 +1,7 @@
 ﻿@model IEnumerable< Airbnb.Models.Hotel>;
-@using Microsoft.AspNetCore.Identity;
+@*@using Microsoft.AspNetCore.Identity;
 @inject SignInManager<ApplicationUser> signInManger;
-@inject UserManager<ApplicationUser> UserManager;
+@inject UserManager<ApplicationUser> UserManager;*@
 
 @{
     ViewData["Title"] = "Home Page";
@@ -37,10 +37,10 @@
 </form>
 @*hotel list*@
 
-@if (signInManger.IsSignedIn(User)&& User.IsInRole("Admin"))
+@*@if (signInManger.IsSignedIn(User)&& User.IsInRole("Admin"))
 {
     <a asp-action="Index" asp-controller="AdminDashBoard">admin</a>
-}
+}*@
 <div class="container text-center">
     <div class="row row-cols-4">
 
