@@ -10756,11 +10756,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
+      "projectUniqueName": "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\Airbnbfinal.csproj",
       "projectName": "Airbnbfinal",
-      "projectPath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
+      "projectPath": "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\Airbnbfinal.csproj",
       "packagesPath": "C:\\Users\\Antr\\.nuget\\packages\\",
-      "outputPath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\obj\\",
+      "outputPath": "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Antr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10846,13 +10846,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

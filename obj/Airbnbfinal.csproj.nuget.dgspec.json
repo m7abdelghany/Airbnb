@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj": {}
+    "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\Airbnbfinal.csproj": {}
   },
   "projects": {
-    "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj": {
+    "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\Airbnbfinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
+        "projectUniqueName": "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\Airbnbfinal.csproj",
         "projectName": "Airbnbfinal",
-        "projectPath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
+        "projectPath": "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\Airbnbfinal.csproj",
         "packagesPath": "C:\\Users\\Antr\\.nuget\\packages\\",
-        "outputPath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\obj\\",
+        "outputPath": "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Antr\\AppData\\Roaming\\NuGet\\NuGet.Config",

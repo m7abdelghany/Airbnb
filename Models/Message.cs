@@ -25,5 +25,12 @@ namespace Airbnb.Models
         public bool? Seen { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime TimeOfSeen { get; set; }
+
+        [ForeignKey("HotelmangerId")]
+        [InverseProperty("MessageHotelmangers")]
+        public virtual AspNetUser Hotelmanger { get; set; }
+        [ForeignKey("UserId")]
+        [InverseProperty("MessageUsers")]
+        public virtual AspNetUser User { get; set; }
     }
 }

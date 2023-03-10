@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wXgtdxib/Gb1WzvBqDhtVp6eyYpinOHAHfBeu7sQc+u4K1gDUaisY5SZRqOiihi8vRnYHpNbItqNEHBfHiFZGg==",
+  "dgSpecHash": "aDJrhyx0SPInQbbcbPLsff6whb4jvzfnMJkbPkmdQymQ+VvyeCS+tuM7akKwZGfvEJ3aikzuCode9snvqYMqfw==",
   "success": true,
-  "projectFilePath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
+  "projectFilePath": "E:\\.Net ITI\\graduation project\\3.10.2023\\Airbnb\\Airbnbfinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Antr\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Antr\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
