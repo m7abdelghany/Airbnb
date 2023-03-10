@@ -45,6 +45,7 @@ namespace Airbnbfinal.Controllers
             }
 
         }
+        
         [Authorize]
         [HttpGet]
         public IActionResult Create()
