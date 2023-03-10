@@ -3,6 +3,7 @@ using Airbnbfinal.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Configuration;
 using System;
 using System.Diagnostics;
 
@@ -112,49 +113,7 @@ namespace Airbnbfinal.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //public IActionResult ImagesAdd(List<IFormFile> Himg,Image imag)
-        //{
-        //    //int myData = (int)TempData["Hid"];
-        //    //TempData.Keep("Hid");
-
-        //    //Hotel h = db.Hotels.Include(a => a.Images).FirstOrDefault(a => a.ID == myData);
-
-        //    //if (Himg == null)
-        //    //{
-        //    //    ModelState.AddModelError("", "No image uploaded, Please upload image");
-
-        //    //}
-        //    //else
-        //    //{
-        //    //    //upload image
-        //    //    foreach (var item in Himg)
-        //    //    {
-        //    //        string filename = h.ID.ToString() + "-" + Himg.FileName.Split(".").Last();
-        //    //        imag.img = filename;
-        //    //        using (var fs = System.IO.File.Create("wwwroot/photos/" + filename))
-        //    //        {
-        //    //            Himg.CopyTo(fs);
-        //    //        }
-        //    //    }
-
-
-        //    //}
-        //    //if (ModelState.IsValid)
-        //    //{
-
-        //    //    db.Add(std);
-        //    //    return RedirectToAction("index", "student");
-        //    //}
-        //    //else
-        //    //{
-        //    //    return View(std);
-        //    //}
-
-
-
-
-        //}
+       
 
         [HttpPost]
         public async Task<IActionResult> ImagesAdd( List<IFormFile> files)
@@ -185,22 +144,58 @@ namespace Airbnbfinal.Controllers
                 }
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("RoomAdd");
 
         }
 
-        //[HttpGet]
-        //public IActionResult RoomAdd()
-        //{
-        //    return View();
-        //}
+            [HttpGet]
+        public IActionResult RoomAdd()
+        {
+           
+            return View();
+        }
 
-        //[HttpPost]
-        //public IActionResult RoomAdd(int type)
-        //{
-        //    ViewBag.t = type;
-        //    return RedirectToAction("index");
-        //}
+        [HttpPost]
+        public IActionResult RoomAdd(Room rooms)
+        {
+           
+
+            int myData = (int)TempData["Hid"];
+            TempData.Keep("Hid");
+            rooms.Hotel_Id=myData;
+            db.Rooms.Add(rooms);
+           
+            db.SaveChanges();
+            ModelState.Clear();
+
+            return View();
+        }
+
+
+        public IActionResult Success()
+        {
+            return View();
+        }
+
+
+
+        public IActionResult category(int cid)
+        {
+            List<Hotel> H = db.Hotels.Include(a => a.Category).Include(a => a.Images).Where(a =>a.Category_Id==cid).ToList();
+
+            return View(H);  
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         public IActionResult Privacy()
         {

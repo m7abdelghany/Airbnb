@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj": {}
+    "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj": {}
   },
   "projects": {
-    "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj": {
+    "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj",
+        "projectUniqueName": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
         "projectName": "Airbnbfinal",
-        "projectPath": "D:\\program setup\\cmder\\Airbnb_Edit\\Airbnbfinal.csproj",
-        "packagesPath": "C:\\Users\\ITI\\.nuget\\packages\\",
-        "outputPath": "D:\\program setup\\cmder\\Airbnb_Edit\\obj\\",
+        "projectPath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\Airbnbfinal.csproj",
+        "packagesPath": "C:\\Users\\Antr\\.nuget\\packages\\",
+        "outputPath": "E:\\.Net ITI\\graduation project\\9.3.2023\\Airbnb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ITI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Antr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
