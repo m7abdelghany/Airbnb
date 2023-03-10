@@ -12,6 +12,7 @@ namespace Airbnb.Models
     {
         [Key]
         public int ImgId { get; set; }
+        [Required]
         public string img { get; set; }
         public int? hotel_id { get; set; }
 

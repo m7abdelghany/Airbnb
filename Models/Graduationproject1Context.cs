@@ -38,7 +38,7 @@ namespace Airbnb.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Graduationproject1;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Graduationproject1;Integrated Security=True", x => x.UseDateOnlyTimeOnly());
             }
         }
 
@@ -158,6 +158,18 @@ namespace Airbnb.Models
             modelBuilder.Entity<Message>(entity =>
             {
                 entity.Property(e => e.TimeOfSeen).HasDefaultValueSql("(getdate())");
+
+                entity.HasOne(d => d.Hotelmanger)
+                    .WithMany(p => p.MessageHotelmangers)
+                    .HasForeignKey(d => d.HotelmangerId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_AspNetUsers1");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.MessageUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Message_AspNetUsers");
             });
 
             modelBuilder.Entity<PaymentType>(entity =>

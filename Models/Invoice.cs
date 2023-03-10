@@ -17,8 +17,8 @@ namespace Airbnb.Models
         public int? Booking_Id { get; set; }
         [Column(TypeName = "money")]
         public decimal? Amount { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime? IssueDate { get; set; }
+        [NotMapped]
+        public DateOnly? IssueDate { get; set; }
         public int? PaymentType_Id { get; set; }
 
         [ForeignKey("Booking_Id")]

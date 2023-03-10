@@ -24,13 +24,6 @@ namespace Airbnbfinal.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
-        //private readonly ILogger<HomeController> _logger;
-
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-
 
         public IActionResult Index()
         {
@@ -52,6 +45,8 @@ namespace Airbnbfinal.Controllers
             }
 
         }
+        
+        [Authorize]
         [HttpGet]
         [Authorize]
         public IActionResult Create()
@@ -69,18 +64,16 @@ namespace Airbnbfinal.Controllers
         [HttpPost]
         [Authorize]
         public IActionResult Create(Hotel h /*,int[] FacilitiesToAdd*/)
+        public async Task<IActionResult> Create(Hotel h /*,int[] FacilitiesToAdd*/)
         {
             SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
             ViewBag.city = cities;
 
             SelectList categ = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
             ViewBag.category = categ;
-
-
-
-
-            // ViewBag.id = h.ID;
-
+            var user = await userManager.GetUserAsync(User);
+            var userid = user.Id;
+            h.Hotel_admin= userid;
             if (ModelState.IsValid)
             {
                 db.Add(h);
@@ -110,13 +103,19 @@ namespace Airbnbfinal.Controllers
 
             Hotel h = db.Hotels.Include(a => a.Facilities).FirstOrDefault(a => a.ID == myData);
 
-
-            foreach (var item in facilit)
+            if (ModelState.IsValid)
             {
-                h.Facilities.Add(db.Facilities.FirstOrDefault(a => a.FacilityId == item));
+                foreach (var item in facilit)
+                {
+                    h.Facilities.Add(db.Facilities.FirstOrDefault(a => a.FacilityId == item));
+                }
+                db.SaveChanges();
+                return RedirectToAction("ImagesAdd");
             }
-            db.SaveChanges();
-            return RedirectToAction("ImagesAdd");
+            else
+            {
+                return View();
+            }
         }
         [HttpGet]
         public IActionResult ImagesAdd()
@@ -128,34 +127,38 @@ namespace Airbnbfinal.Controllers
         [HttpPost]
         public async Task<IActionResult> ImagesAdd(List<IFormFile> files)
         {
-            int myData = (int)TempData["Hid"];
+                int myData = (int)TempData["Hid"];
             TempData.Keep("Hid");
 
             var imageCount = 1;
-            foreach (var file in files)
-            {
-                if (file.Length > 0)
+           
+                foreach (var file in files)
                 {
-                    var fileName = Path.GetFileName(file.FileName);
-                    var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-                    var fileExtension = Path.GetExtension(fileName);
-                    var newFileName = $"{myData}-{imageCount}{fileExtension}";
-                    var Fname = $"/photos/{myData}-{imageCount}{fileExtension}";
-                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", newFileName);
-
-                    using (var stream = new FileStream(path, FileMode.Create))
+                    if (file.Length > 0)
                     {
-                        await file.CopyToAsync(stream);
+
+                        var fileName = Path.GetFileName(file.FileName);
+                        var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
+                        var fileExtension = Path.GetExtension(fileName);
+                        var newFileName = $"{myData}-{imageCount}{fileExtension}";
+                        var Fname = $"/photos/{myData}-{imageCount}{fileExtension}";
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", newFileName);
+
+                        using (var stream = new FileStream(path, FileMode.Create))
+                        {
+                            await file.CopyToAsync(stream);
+                        }
+                        var img = new Image { hotel_id = myData, img = Fname };
+                        
+                        db.Images.Add(img);
+                        db.SaveChangesAsync();
+                        imageCount++;
                     }
-                    var img = new Image { hotel_id = myData, img = Fname };
-                    db.Images.Add(img);
-                    db.SaveChangesAsync();
-                    imageCount++;
+
                 }
-            }
 
-            return RedirectToAction("RoomAdd");
-
+                return RedirectToAction("RoomAdd");
+           
         }
 
             [HttpGet]
@@ -168,16 +171,12 @@ namespace Airbnbfinal.Controllers
         [HttpPost]
         public IActionResult RoomAdd(Room rooms)
         {
-           
-
             int myData = (int)TempData["Hid"];
             TempData.Keep("Hid");
             rooms.Hotel_Id=myData;
             db.Rooms.Add(rooms);
-           
             db.SaveChanges();
             ModelState.Clear();
-
             return View();
         }
 
@@ -211,7 +210,6 @@ namespace Airbnbfinal.Controllers
         }
 
         [Authorize]
-        [HttpGet]
         public async Task<IActionResult> Messages()
         {
             var user = await userManager.GetUserAsync(User);

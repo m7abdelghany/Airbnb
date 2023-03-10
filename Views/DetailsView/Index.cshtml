@@ -178,8 +178,8 @@
         <div class="mb-3">
             
                 <input asp-for="ID" hidden />
-                
-                 <textarea  asp-action="addReview" name="rev" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your review..."></textarea>
+
+                <textarea asp-action="addReview" name="rev" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your review..." required></textarea>
                 
                 <input asp-action="addReview" type="submit" class="btn btn-primary center-btn" style="background-color:#F12954;" value="Add Review">
         </div>
@@ -202,7 +202,7 @@
         <form method="post" asp-action="Contact">
             <input asp-for="ID" hidden />
             <input asp-for="Hotel_admin" hidden/>
-            <textarea asp-action="Contact" name="Msg" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your message..."></textarea>
+            <textarea asp-action="Contact" name="Msg" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Write your message..." required></textarea>
             <input asp-action="Contact"  type="submit" class="btn btn-primary center-btn" style="background-color:#F12954;">Contact Me</input>
         </form>
     </div>
