@@ -1,5 +1,8 @@
 ﻿using Airbnb.Models;
+using Airbnbfinal.Data;
 using Airbnbfinal.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +15,12 @@ namespace Airbnbfinal.Controllers
     public class HomeController : Controller
     {
         private Graduationproject1Context db;
+        private UserManager<ApplicationUser> userManager;
 
-        public HomeController(Graduationproject1Context db) 
+        public HomeController(Graduationproject1Context db, UserManager<ApplicationUser> userManager)
         {
             this.db = db;
+            this.userManager = userManager;
         }
         //private readonly ILogger<HomeController> _logger;
 
@@ -48,14 +53,14 @@ namespace Airbnbfinal.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            SelectList cities = new SelectList(db.Cities.ToList(), "CityId","CityName");
+            SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
             ViewBag.city = cities;
 
             SelectList categ = new SelectList(db.Categories.ToList(), "CategoryId", "CategoryName");
             ViewBag.category = categ;
 
-            
-            
+
+
             return View();
         }
         [HttpPost]
@@ -76,8 +81,8 @@ namespace Airbnbfinal.Controllers
             {
                 db.Add(h);
                 db.SaveChanges();
-            TempData["Hid"] = h.ID;
-            return RedirectToAction("Facilities");
+                TempData["Hid"] = h.ID;
+                return RedirectToAction("Facilities");
             }
 
             return View(h);
@@ -90,8 +95,9 @@ namespace Airbnbfinal.Controllers
             return View();
         }
 
+
         [HttpPost]
-        public IActionResult Facilities( int[] facilit)
+        public IActionResult Facilities(int[] facilit)
         {
             int myData = (int)TempData["Hid"];
             TempData.Keep("Hid");
@@ -99,7 +105,7 @@ namespace Airbnbfinal.Controllers
             ViewBag.Id = myData;
 
             Hotel h = db.Hotels.Include(a => a.Facilities).FirstOrDefault(a => a.ID == myData);
-            
+
 
             foreach (var item in facilit)
             {
@@ -109,14 +115,14 @@ namespace Airbnbfinal.Controllers
             return RedirectToAction("ImagesAdd");
         }
         [HttpGet]
-        public  IActionResult ImagesAdd()
+        public IActionResult ImagesAdd()
         {
             return View();
         }
-       
+
 
         [HttpPost]
-        public async Task<IActionResult> ImagesAdd( List<IFormFile> files)
+        public async Task<IActionResult> ImagesAdd(List<IFormFile> files)
         {
             int myData = (int)TempData["Hid"];
             TempData.Keep("Hid");
@@ -189,14 +195,6 @@ namespace Airbnbfinal.Controllers
 
 
 
-
-
-
-
-
-
-
-
         public IActionResult Privacy()
         {
             return View();
@@ -206,6 +204,67 @@ namespace Airbnbfinal.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        //[Authorize]
+        //[HttpGet]
+        //public async Task< IActionResult> Messages()
+        //{
+        //    var user = await userManager.GetUserAsync(User);
+
+        //    var username =user.UserName;
+        //    ViewBag.username=username;
+        //    var userid = user.Id;
+        //   string id = "1";
+        //    AspNetUser Husers = db.AspNetUsers.Include(a=>a.MessageHotelmangers).FirstOrDefault(a=>a.Id==userid);
+        //    AspNetUser Rusers = db.AspNetUsers.Include(a=>a.MessageUsers).First(a=>a.Id==userid);
+
+        //    return View(Husers);
+        //}
+
+        public async Task<IActionResult> Messages()
+        {
+            var user = await userManager.GetUserAsync(User);
+            var userid = user.Id;
+            var username = user.UserName;
+            ViewBag.Username = username;
+            var messages = await db.Messages
+         .Where(m => m.HotelmangerId == userid)
+         .ToListAsync();
+            var groupedMessages = new Dictionary<string, List<Message>>();
+            foreach (var message in messages)
+            {
+                if (!groupedMessages.ContainsKey(message.UserId))
+                {
+                    groupedMessages[message.UserId] = new List<Message>();
+                }
+                groupedMessages[message.UserId].Add(message);
+            }
+            var viewModel = new ViewMessagesViewModel
+            {
+                UserId = userid,
+                GroupedMessages = groupedMessages
+            };
+
+            return View(viewModel);
+
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult SendMessage(string receiverId, string senderId, string message)
+        {
+            var newMessage = new Message
+            {
+                HotelmangerId = receiverId,
+                UserId = senderId,
+                Message1 = message,
+                
+            };
+
+            db.Messages.Add(newMessage);
+            db.SaveChanges();
+
+            return RedirectToAction("Messages", new { userId = receiverId });
         }
     }
 }

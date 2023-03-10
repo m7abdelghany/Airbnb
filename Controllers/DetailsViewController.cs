@@ -56,28 +56,25 @@ namespace Airbnbfinal.Controllers
                 db.Reviews.Add(review);
                 db.SaveChanges();
 
-            return View("index",hotel);
+            return RedirectToAction("Index",hotel);
 
 
 
 
         }
-      
 
-        //[HttpPost]
-        //[Authorize]
-        //public async Task<IActionResult> addReview([Bind("ReviewId,Review1,Hotel_Id,User_Id")] Review review)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Add(review);
-        //        await db.SaveChangesAsync();
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    ViewData["Hotel_Id"] = new SelectList(db.Hotels, "ID", "ID", review.Hotel_Id);
-        //    ViewData["User_Id"] = new SelectList(db.AspNetUsers, "Id", "Id", review.User_Id);
-        //    return View(review);
-        //}
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Contact(int ID, string msg,string Hotel_admin)
+        {
+            var user = await userManager.GetUserAsync(User);
+            var userid = user.Id;
+            Message mess = new Message { Message1=msg,HotelmangerId=Hotel_admin,UserId=userid};
+            db.Messages.Add(mess);
+            db.SaveChanges();
+            var hotels = db.Hotels.Include(a => a.Images).Include(a => a.Facilities).Include(a => a.Hotel_adminNavigation).Include(a => a.Reviews).ThenInclude(a => a.User).FirstOrDefault(a => a.ID == ID);
+            return RedirectToAction("Index",hotels);
+        }
 
     }
 
