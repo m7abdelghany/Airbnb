@@ -37,7 +37,7 @@
 </form>
 @*hotel list*@
 
-@*@if (signInManger.IsSignedIn(User)&& User.IsInRole("Admin"))
+@if (signInManger.IsSignedIn(User)&& User.IsInRole("Admin"))
 {
     <a asp-action="Index" asp-controller="AdminDashBoard">admin</a>
 }*@

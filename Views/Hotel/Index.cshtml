@@ -4,6 +4,9 @@
     ViewData["Title"] = "Index";
 }
 
+    @*<button asp-action="Create" asp-controller="Hotel" class="create btn">Create</button>*@
+    <a asp-action="Create"  class="create btn">Create</a>
+
 <main>
     <nav class="sidebar">
         <ul>
@@ -14,6 +17,7 @@
             <li><i class="las la-check-square"></i><a href="/Booking/index">Booking</a></li>
         </ul>
     </nav>
+    </main>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -34,12 +38,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Website)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Rate)
-            </th>
+            
            
             <th>
                 @Html.DisplayNameFor(model => model.Category)
@@ -47,12 +46,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.City)
             </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Hotel_adminNavigation)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Facilities)
             </th>
+
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -84,9 +86,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.City.CityName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hotel_adminNavigation.Id)
-            </td>
+            
                 <td>
                     @* @Html.DisplayFor(modelItem => item.Facilities)*@
                     <select>

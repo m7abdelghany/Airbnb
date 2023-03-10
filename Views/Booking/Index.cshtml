@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Index";
 }
+<a asp-action="Create" class="create btn">Create</a>
 
 <main>
     <nav class="sidebar">
@@ -16,9 +17,9 @@
     </nav>
 </main>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
 <table class="table">
     <thead>
         <tr>
@@ -68,9 +69,11 @@
                 
            
             <td>
-                <a asp-action="Edit" asp-route-id="@item.BookingId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BookingId">Details</a> |
+                <div class="action">
+                <a asp-action="Edit" asp-route-id="@item.BookingId">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.BookingId">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.BookingId">Delete</a>
+                    </div>
             </td>
         </tr>
 }

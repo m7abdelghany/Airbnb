@@ -14,11 +14,10 @@
             <li><i class="las la-check-square"></i><a href="/Booking/index">Booking</a></li>
         </ul>
     </nav>
-
+</main>
 <div>
-    <h4>Booking</h4>
-    <hr />
-    <dl class="row">
+    
+    <dl class="row move">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.RoomCount)
         </dt>
@@ -45,7 +44,7 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.BookingId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="colordetails">
+    <a asp-action="Edit" asp-route-id="@Model?.BookingId" class="btn">Edit</a> 
+    <a asp-action="Index" class="btn movedetails ">Back to List</a>
 </div>

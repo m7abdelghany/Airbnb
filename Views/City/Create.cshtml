@@ -16,9 +16,8 @@
     </nav>
 </main>
 
-<h4>City</h4>
-<hr />
-<div class="row">
+
+<div class="row move">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -32,15 +31,15 @@
                 <input asp-for="CityName" class="form-control" />
                 <span asp-validation-for="CityName" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="form-group moveinput">
+                <input type="submit" value="Create" class="btn " />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn colorbtn2">Back to List</a>
 </div>
 
 @section Scripts {

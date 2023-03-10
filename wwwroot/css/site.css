@@ -367,8 +367,8 @@ footer {
 /* Styling for table */
 .table {
     margin-top: 60px;
-    margin-left: 90px;
-    width: 40%;
+    margin-left: 130px;
+    width: 20%;
 }
 /* Styling for action links */
 .action {
@@ -388,3 +388,77 @@ footer {
         .action a:hover {
             background-color: #ffffff04;
         }
+.create {
+    width: 75px;
+    height: 30px;
+    background-color: var(--pink);
+    border-radius: 5px;
+    border-color:var(--pink);
+    position: absolute;
+    left: 14rem;
+    text-align: center;
+    top: 6.5rem;
+    color: white;
+    font-size: 15px;
+}
+.move{
+   /* position:absolute;*/
+    left:30rem;
+    margin-left:160px;
+}
+.moveinput{
+   /* background-color:var(--pink);
+    border-color:var(--pink);*/
+    margin-top:15px;
+}
+    .moveinput input {
+        background-color: var(--pink);
+        border-color: var(--pink);
+        color:white;
+    }
+.colorbtn {
+    margin-left: 100px;
+    background-color: var(--pink);
+    color:white;
+    position:absolute;
+    left:20rem;
+    top:45rem;
+}
+.colorbtn2 {
+    margin-left: 100px;
+    background-color: var(--pink);
+    color: white;
+    position: absolute;
+    left: 20rem;
+    top:14rem;
+}
+.colorbtn3 {
+    margin-left: 100px;
+    background-color: var(--pink);
+    color: white;
+    position: absolute;
+    left: 20rem;
+    top: 24.5rem;
+}
+.colordetails {
+    display: flex;
+    position: absolute;
+    left: 15rem;
+    justify-content: space-between;
+}
+    .colordetails a {
+        background-color: var(--pink);
+        color: white;
+        margin:10px;
+        
+    }
+    .colordetails input {
+        background-color: var(--pink);
+        color: white;
+        margin: 10px;
+    }
+.cityedit {
+    background-color:var(--pink) ;
+      color:white ; 
+      margin-top:5px;
+}

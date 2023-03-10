@@ -17,9 +17,8 @@
     </main>
 
 <div>
-    <h4>Hotel</h4>
-    <hr />
-    <dl class="row">
+    
+    <dl class="row move">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -88,7 +87,7 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="colordetails">
+    <a asp-action="Edit" asp-route-id="@Model?.ID" class="btn  ">Edit</a> 
+    <a asp-action="Index" class="btn movedetails ">Back to List</a>
 </div>
