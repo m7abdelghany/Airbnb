@@ -109,6 +109,8 @@ namespace Airbnbfinal.Areas.Identity.Pages.Account
             
             public int PhoneNumber { get; set; }
             
+            [StringLength(14)]
+            public string NationalID { get; set; }
         }
 
 
@@ -124,7 +126,7 @@ namespace Airbnbfinal.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { FirstName=Input.FirstName, LastName=Input.LastName ,Email=Input.Email,Age=Input.Age,UserName=Input.UserName,PhoneNumber=Input.PhoneNumber.ToString() };
+                var user = new ApplicationUser() { FirstName=Input.FirstName, LastName=Input.LastName ,Email=Input.Email,Age=Input.Age,UserName=Input.UserName,PhoneNumber=Input.PhoneNumber.ToString(),NationalId=Input.NationalID };
                 // await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 // await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 

@@ -48,7 +48,7 @@ namespace Airbnbfinal.Controllers
         
         [Authorize]
         [HttpGet]
-        [Authorize]
+        [Authorize (Roles = "Hotel_Admin")]
         public IActionResult Create()
         {
             SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");

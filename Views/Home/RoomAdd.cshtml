@@ -7,8 +7,8 @@
 
 <h1>Finally, Add your variety of <span style="color:#F12954">Rooms</span>.</h1>
 <form asp-action="RoomAdd" method="post">
-    <label asp-for="Description" class="form-label"></label>
-    <input asp-for="Description" class="form-control" type="text" placeholder="room description" >
+    <label asp-for="Description"  class="form-label"></label>
+    <input asp-for="Description" required class="form-control" type="text" placeholder="room description" >
     <span asp-validation-for="Description"></span>
 
     <label asp-for="RoomType" class="form-label"></label>

@@ -1,4 +1,7 @@
 ﻿@model Airbnb.Models.Hotel;
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<ApplicationUser> signInManger;
+@inject UserManager<ApplicationUser> UserManager;
 
 @*index*@
 
@@ -116,8 +119,12 @@
                 <p class="card-text">
                              
           </p>
-          <a href="@Model.HotelPayment"  class="btn btn-primary center-btn" style="background-color:#F12954;">Reserve</a>
-                               <br />
+                @if (signInManger.IsSignedIn(User))
+                {
+                    <a href="@Model.HotelPayment" class="btn btn-primary center-btn" style="background-color:#F12954;">Reserve</a>
+                    <br />
+                }
+         
                                
            <p class="text-black-50" align="center">You won't be charged yet <br /> Continue to checkout..</p>
           </div>

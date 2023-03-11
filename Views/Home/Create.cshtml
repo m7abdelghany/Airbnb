@@ -6,7 +6,7 @@
 
 <form method="post" enctype="multipart/form-data">
     <label asp-for="Name" class="form-label"></label>
-    <input asp-for="Name" class="form-control" type="text" placeholder="Hotel Name" >
+    <input asp-for="Name" class="form-control" required type="text" placeholder="Hotel Name" >
     <span asp-validation-for="Name"></span>
 
     <label asp-for="Description" class="form-label"></label>
