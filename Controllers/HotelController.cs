@@ -161,9 +161,21 @@ namespace Airbnbfinal.Controllers
             {
                 return Problem("Entity set 'Graduationproject1Context.Hotels'  is null.");
             }
-            var hotel = await _context.Hotels.FindAsync(id);
+            var hotel = await _context.Hotels.Include(a => a.Reviews).Include(a => a.Images).Include(a => a.Rooms).Include(a => a.Bookings).Include(a=>a.Facilities).FirstOrDefaultAsync(a=>a.ID==id);
+            //var hotel = await _context.Hotels.FindAsync(id);
+            var facilityToRemove = hotel.Facilities.ToList();
+           
+
             if (hotel != null)
             {
+                foreach (var amenity in facilityToRemove)
+                {
+                    hotel.Facilities.Remove(amenity);
+                }
+                _context.Reviews.RemoveRange(hotel.Reviews);
+                _context.Rooms.RemoveRange(hotel.Rooms);
+                _context.Images.RemoveRange(hotel.Images);
+                _context.Bookings.RemoveRange(hotel.Bookings);
                 _context.Hotels.Remove(hotel);
             }
             

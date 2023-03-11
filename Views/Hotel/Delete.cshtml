@@ -8,10 +8,11 @@
     <nav class="sidebar">
         <ul>
 
-            <li><i class="las la-hotel"></i><a href="/Hotel/index">Holel</a></li>
+            <li><i class="las la-hotel"></i><a href="/Hotel/index">Hotel</a></li>
             <li><i class="las la-city"></i><a href="/City/index">City</a></li>
             <li><i class="las la-bed"></i><a href="/Room/index">Rooms</a></li>
             <li><i class="las la-check-square"></i><a href="/Booking/index">Booking</a></li>
+            @*<li><i class="las la-users"></i><a href="#">Users</a></li>*@
         </ul>
     </nav>
 </main>
@@ -91,7 +92,7 @@
     
     <form asp-action="Delete" class="colordetails">
         <input type="hidden" asp-for="ID" />
-        <input type="submit" value="Delete" class="btn " /> 
+        <input type="submit" value="Delete" class="btn"/> 
         <a asp-action="Index" class="btn">Back to List</a>
     </form>
 </div>
