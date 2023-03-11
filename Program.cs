@@ -3,6 +3,7 @@ using Airbnbfinal.Data;
 using Airbnbfinal.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Stripe;
 
 namespace Airbnbfinal
 {
@@ -27,6 +28,7 @@ namespace Airbnbfinal
             builder.Services.AddDbContext<Graduationproject1Context>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+           
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()

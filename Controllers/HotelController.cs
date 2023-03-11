@@ -6,16 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Airbnb.Models;
+using Airbnbfinal.Data;
+using Airbnbfinal.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Airbnbfinal.Controllers
 {
     public class HotelController : Controller
     {
-        private readonly Graduationproject1Context _context;
+        private  Graduationproject1Context _context;
+        private  UserManager <ApplicationUser> userManager;
 
-        public HotelController(Graduationproject1Context context)
+        public HotelController(Graduationproject1Context context , UserManager <ApplicationUser> userManager)
         {
             _context = context;
+            this.userManager = userManager;
         }
 
         // GET: Hotel
@@ -174,6 +179,68 @@ namespace Airbnbfinal.Controllers
         private bool HotelExists(int id)
         {
           return _context.Hotels.Any(e => e.ID == id);
+        }
+        public IActionResult ManageUsers()
+        {
+            var users = _context.AspNetUsers.ToList();
+            return View(users);
+        }
+        [HttpGet]
+        public IActionResult EditUser (string Id)
+        {
+            var user = _context.AspNetUsers.FirstOrDefault(a => a.Id == Id);
+            ViewBag.roles = new SelectList(_context.AspNetRoles.ToList(), "Id", "Name");
+            return View(user);
+        }
+        [HttpPost]
+        public async  Task<IActionResult> EditUser (string Id ,AspNetUser netUser, string Roles)
+        {
+           List< string> check = new List<string>();
+            List<AspNetRole> diserd = _context.AspNetRoles.ToList();
+            foreach (var item in diserd)
+            {
+                if (item.Id==Roles)
+                {
+                    check.Add( item.Name);
+                }
+            }
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            var user = await userManager.FindByIdAsync(Id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                var role = await userManager.GetRolesAsync(user);
+                await userManager.RemoveFromRolesAsync(user, role);
+                await userManager.AddToRolesAsync(user, check);
+                _context.Update(netUser);
+                _context.SaveChanges();
+                var users = _context.AspNetUsers.ToList();
+                return RedirectToAction("ManageUsers", users);
+            }
+            return View(user);
+            
+        }
+        public async Task<IActionResult> DeleteUser(string Id)
+        {
+            if (Id==null)
+            {
+                return NotFound();
+            }
+            var user = await userManager.FindByIdAsync(Id);
+            if (user==null)
+            {
+                return NotFound();
+            }
+            await userManager.DeleteAsync(user);
+            var users = _context.AspNetUsers.ToList();
+            return RedirectToAction("ManageUsers",users);
         }
     }
 }

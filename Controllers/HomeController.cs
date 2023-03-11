@@ -63,7 +63,7 @@ namespace Airbnbfinal.Controllers
         }
         [HttpPost]
         [Authorize]
-        public IActionResult Create(Hotel h /*,int[] FacilitiesToAdd*/)
+        
         public async Task<IActionResult> Create(Hotel h /*,int[] FacilitiesToAdd*/)
         {
             SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
