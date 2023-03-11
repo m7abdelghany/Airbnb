@@ -39,6 +39,11 @@ namespace Airbnb.Models
         public int? Category_Id { get; set; }
         [StringLength(450)]
         public string Hotel_admin { get; set; }
+        public string HotelPayment { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime? DateFrom { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime? DateTo { get; set; }
 
         [ForeignKey("Category_Id")]
         [InverseProperty("Hotels")]
@@ -61,5 +66,6 @@ namespace Airbnb.Models
         [ForeignKey("Hotel_Id")]
         [InverseProperty("Hotels")]
         public virtual ICollection<Facility> Facilities { get; set; }
+        
     }
 }

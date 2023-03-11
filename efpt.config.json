@@ -15,7 +15,19 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
+         "Name": "[dbo].[AspNetRoleClaims]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[AspNetRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserClaims]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserLogins]",
          "ObjectType": 0
       },
       {
@@ -24,6 +36,10 @@
       },
       {
          "Name": "[dbo].[AspNetUsers]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AspNetUserTokens]",
          "ObjectType": 0
       },
       {
@@ -36,6 +52,10 @@
       },
       {
          "Name": "[dbo].[City]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CreditCard]",
          "ObjectType": 0
       },
       {
@@ -77,9 +97,13 @@
       {
          "Name": "[dbo].[RoomBooked]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Transaction]",
+         "ObjectType": 0
       }
    ],
-   "UiHint": "DESKTOP-0F1A685.Graduationproject1",
+   "UiHint": "DESKTOP-V8SD4O7.Graduationproject1",
    "UncountableWords": null,
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,

@@ -13,6 +13,10 @@ namespace Airbnb.Models
     {
         public AspNetUser()
         {
+            AspNetUserClaims = new HashSet<AspNetUserClaim>();
+            AspNetUserLogins = new HashSet<AspNetUserLogin>();
+            AspNetUserTokens = new HashSet<AspNetUserToken>();
+            CreditCards = new HashSet<CreditCard>();
             Hotels = new HashSet<Hotel>();
             MessageHotelmangers = new HashSet<Message>();
             MessageUsers = new HashSet<Message>();
@@ -44,6 +48,14 @@ namespace Airbnb.Models
         [Required]
         public string LastName { get; set; }
 
+        [InverseProperty("User")]
+        public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
+        [InverseProperty("User")]
+        public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
+        [InverseProperty("User")]
+        public virtual ICollection<AspNetUserToken> AspNetUserTokens { get; set; }
+        [InverseProperty("User")]
+        public virtual ICollection<CreditCard> CreditCards { get; set; }
         [InverseProperty("Hotel_adminNavigation")]
         public virtual ICollection<Hotel> Hotels { get; set; }
         [InverseProperty("Hotelmanger")]
