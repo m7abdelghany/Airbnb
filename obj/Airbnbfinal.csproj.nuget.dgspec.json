@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\New folder (3)\\Grad_Project\\Airbnbfinal.csproj": {}
+    "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj": {}
   },
   "projects": {
-    "E:\\New folder (3)\\Grad_Project\\Airbnbfinal.csproj": {
+    "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\New folder (3)\\Grad_Project\\Airbnbfinal.csproj",
+        "projectUniqueName": "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj",
         "projectName": "Airbnbfinal",
-        "projectPath": "E:\\New folder (3)\\Grad_Project\\Airbnbfinal.csproj",
-        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "E:\\New folder (3)\\Grad_Project\\obj\\",
+        "projectPath": "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj",
+        "packagesPath": "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\",
+        "outputPath": "A:\\airbnb AANN\\Airbnb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shrouk Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

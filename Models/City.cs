@@ -13,6 +13,7 @@ namespace Airbnb.Models
     {
         public City()
         {
+            CreditCards = new HashSet<CreditCard>();
             Hotels = new HashSet<Hotel>();
         }
 
@@ -21,6 +22,8 @@ namespace Airbnb.Models
         [StringLength(50)]
         public string CityName { get; set; }
 
+        [InverseProperty("City")]
+        public virtual ICollection<CreditCard> CreditCards { get; set; }
         [InverseProperty("City")]
         public virtual ICollection<Hotel> Hotels { get; set; }
     }

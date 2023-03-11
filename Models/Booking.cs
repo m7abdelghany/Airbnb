@@ -13,15 +13,16 @@ namespace Airbnb.Models
         public Booking()
         {
             Invoices = new HashSet<Invoice>();
+            Transactions = new HashSet<Transaction>();
             Rooms = new HashSet<Room>();
         }
 
         [Key]
         public int BookingId { get; set; }
-        [NotMapped]
-        public DateOnly? DateFrom { get; set; }
-        [NotMapped]
-        public DateOnly? DateTo { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime? DateFrom { get; set; }
+        [Column(TypeName = "datetime")]
+        public DateTime? DateTo { get; set; }
         public int? RoomCount { get; set; }
         [Column(TypeName = "money")]
         public decimal? TotalPrice { get; set; }
@@ -33,6 +34,8 @@ namespace Airbnb.Models
         public virtual Hotel Hotel { get; set; }
         [InverseProperty("Booking")]
         public virtual ICollection<Invoice> Invoices { get; set; }
+        [InverseProperty("Booking")]
+        public virtual ICollection<Transaction> Transactions { get; set; }
 
         [ForeignKey("Booking_Id")]
         [InverseProperty("Bookings")]

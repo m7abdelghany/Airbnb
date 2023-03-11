@@ -10,6 +10,11 @@ namespace Airbnb.Models
 {
     public partial class AspNetRole
     {
+        public AspNetRole()
+        {
+            AspNetRoleClaims = new HashSet<AspNetRoleClaim>();
+        }
+
         [Key]
         public string Id { get; set; }
         [StringLength(256)]
@@ -17,5 +22,8 @@ namespace Airbnb.Models
         [StringLength(256)]
         public string NormalizedName { get; set; }
         public string ConcurrencyStamp { get; set; }
+
+        [InverseProperty("Role")]
+        public virtual ICollection<AspNetRoleClaim> AspNetRoleClaims { get; set; }
     }
 }

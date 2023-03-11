@@ -19,11 +19,16 @@ namespace Airbnb.Models
         }
 
         public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUserRole> AspNetUserRoles { get; set; }
+        public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; }
         public virtual DbSet<Booking> Bookings { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<City> Cities { get; set; }
+        public virtual DbSet<CreditCard> CreditCards { get; set; }
         public virtual DbSet<Facility> Facilities { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<Image> Images { get; set; }
@@ -32,6 +37,7 @@ namespace Airbnb.Models
         public virtual DbSet<PaymentType> PaymentTypes { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
+        public virtual DbSet<Transaction> Transactions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -44,6 +50,8 @@ namespace Airbnb.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.UseCollation("SQL_Latin1_General_CP1_CI_AS");
+
             modelBuilder.Entity<AspNetRole>(entity =>
             {
                 entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
@@ -58,6 +66,16 @@ namespace Airbnb.Models
                     .HasFilter("([NormalizedUserName] IS NOT NULL)");
 
                 entity.Property(e => e.Gender).HasDefaultValueSql("(CONVERT([bit],(0)))");
+            });
+
+            modelBuilder.Entity<AspNetUserLogin>(entity =>
+            {
+                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
+            });
+
+            modelBuilder.Entity<AspNetUserToken>(entity =>
+            {
+                entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
             });
 
             modelBuilder.Entity<Booking>(entity =>
@@ -91,6 +109,21 @@ namespace Airbnb.Models
             modelBuilder.Entity<City>(entity =>
             {
                 entity.Property(e => e.CityId).ValueGeneratedNever();
+            });
+
+            modelBuilder.Entity<CreditCard>(entity =>
+            {
+                entity.Property(e => e.Year).IsFixedLength();
+
+                entity.HasOne(d => d.City)
+                    .WithMany(p => p.CreditCards)
+                    .HasForeignKey(d => d.CityId)
+                    .HasConstraintName("FK_CreditCard_City");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.CreditCards)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK_CreditCard_AspNetUsers");
             });
 
             modelBuilder.Entity<Facility>(entity =>
@@ -196,6 +229,16 @@ namespace Airbnb.Models
                     .WithMany(p => p.Rooms)
                     .HasForeignKey(d => d.Hotel_Id)
                     .HasConstraintName("FK_Room_Hotel");
+            });
+
+            modelBuilder.Entity<Transaction>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.HasOne(d => d.Booking)
+                    .WithMany(p => p.Transactions)
+                    .HasForeignKey(d => d.BookingId)
+                    .HasConstraintName("FK_Transaction_Bookings");
             });
 
             OnModelCreatingPartial(modelBuilder);
