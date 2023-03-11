@@ -8,18 +8,18 @@
     <nav class="sidebar">
         <ul>
             
-            <li><i class="las la-hotel"></i><a href="/Hotel/index">Holel</a></li>
+            <li><i class="las la-hotel"></i><a href="/Hotel/index">Hotel</a></li>
             <li><i class="las la-city"></i><a href="/City/index">City</a></li>
             <li><i class="las la-bed"></i><a href="/Room/index">Rooms</a></li>
             <li><i class="las la-check-square"></i><a href="/Booking/index">Booking</a></li>
+           @* <li><i class="las la-users"></i><a href="#">Users</a></li>*@
         </ul>
     </nav>
 </main>
 
 <div>
-    <h4>Room</h4>
-    <hr />
-    <dl class="row">
+    
+    <dl class="row move">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
@@ -52,7 +52,7 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.RoomId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="colordetails">
+    <a asp-action="Edit" asp-route-id="@Model?.RoomId" class="btn">Edit</a>
+    <a asp-action="Index" class="btn movedetails ">Back to List</a>
 </div>
