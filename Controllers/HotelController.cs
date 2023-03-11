@@ -175,5 +175,6 @@ namespace Airbnbfinal.Controllers
         {
           return _context.Hotels.Any(e => e.ID == id);
         }
+
     }
 }
