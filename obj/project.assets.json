@@ -10844,11 +10844,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj",
+      "projectUniqueName": "D:\\Clone-ITI-\\Airbnb\\Airbnbfinal.csproj",
       "projectName": "Airbnbfinal",
-      "projectPath": "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj",
+      "projectPath": "D:\\Clone-ITI-\\Airbnb\\Airbnbfinal.csproj",
       "packagesPath": "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\",
-      "outputPath": "A:\\airbnb AANN\\Airbnb\\obj\\",
+      "outputPath": "D:\\Clone-ITI-\\Airbnb\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Shrouk Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4,9 +4,11 @@ using System.Linq;
 using System.Collections.Generic;
 using Airbnbfinal.Models.Stripe;
 using Airbnbfinal.Services.Contracts;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Airbnbfinal.Controllers
 {
+    //[Authorize]
     [Route ("api/[controller]")]
     public class StripeController : Controller
     {
