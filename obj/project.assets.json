@@ -10839,24 +10839,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hankerz\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI\\GraduationProjectLast\\Airbnb\\Airbnbfinal.csproj",
+      "projectUniqueName": "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj",
       "projectName": "Airbnbfinal",
-      "projectPath": "D:\\ITI\\GraduationProjectLast\\Airbnb\\Airbnbfinal.csproj",
-      "packagesPath": "C:\\Users\\hankerz\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI\\GraduationProjectLast\\Airbnb\\obj\\",
+      "projectPath": "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj",
+      "packagesPath": "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\",
+      "outputPath": "A:\\airbnb AANN\\Airbnb\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\hankerz\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Shrouk Mahmoud\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10940,11 +10935,17 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file A:\\airbnb AANN\\Airbnb\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1603",
       "level": "Warning",
