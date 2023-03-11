@@ -316,8 +316,6 @@ D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\ru\Microsoft.CodeAnalysis.Works
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
-D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
@@ -325,7 +323,6 @@ D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win-x86\native\Microso
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
-D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\ITI\GraduationProject\Airbnb\obj\Debug\net6.0\Airbnbfinal.csproj.AssemblyReference.cache
@@ -4875,20 +4872,6 @@ E:\New folder (3)\Grad_Project\obj\Debug\net6.0\EFCoreSqlServerDateOnlyTimeOnly.
 E:\New folder (3)\Grad_Project\obj\Debug\net6.0\Airbnbfinal.dll
 E:\New folder (3)\Grad_Project\obj\Debug\net6.0\refint\Airbnbfinal.dll
 E:\New folder (3)\Grad_Project\obj\Debug\net6.0\Airbnbfinal.pdb
-<<<<<<< HEAD
-D:\ITI\GraduationProjectLast\Airbnb\obj\Debug\net6.0\EFCoreSqlServerDateOnlyTimeOnly.cs
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Azure.Core.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Azure.Identity.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\EntityFrameworkCore.SqlServer.DateOnlyTimeOnly.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Stripe.net.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\System.Memory.Data.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-=======
 E:\New folder (3)\Grad_Project\bin\Debug\net6.0\appsettings.Development.json
 E:\New folder (3)\Grad_Project\bin\Debug\net6.0\appsettings.json
 E:\New folder (3)\Grad_Project\bin\Debug\net6.0\efpt.config.json
@@ -5165,4 +5148,27 @@ E:\New folder (3)\Grad_Project\obj\Debug\net6.0\scopedcss\projectbundle\Airbnbfi
 E:\New folder (3)\Grad_Project\obj\Debug\net6.0\Airbnbfinal.csproj.CopyComplete
 E:\New folder (3)\Grad_Project\obj\Debug\net6.0\Airbnbfinal.genruntimeconfig.cache
 E:\New folder (3)\Grad_Project\obj\Debug\net6.0\ref\Airbnbfinal.dll
->>>>>>> b358bc9b169bb3d2abc9cd19839b3b9ac083ab36
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\Azure.Core.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\Azure.Identity.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\EntityFrameworkCore.SqlServer.DateOnlyTimeOnly.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\Stripe.net.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\System.Memory.Data.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\ITI\GraduationProject\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\ITI\GraduationProject\Airbnb\obj\Debug\net6.0\EFCoreSqlServerDateOnlyTimeOnly.cs
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Azure.Core.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Azure.Identity.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\EntityFrameworkCore.SqlServer.DateOnlyTimeOnly.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\Stripe.net.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\System.Memory.Data.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\ITI\GraduationProjectLast\Airbnb\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\ITI\GraduationProjectLast\Airbnb\obj\Debug\net6.0\EFCoreSqlServerDateOnlyTimeOnly.cs

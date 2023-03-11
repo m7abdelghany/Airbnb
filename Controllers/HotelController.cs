@@ -9,9 +9,11 @@ using Airbnb.Models;
 using Airbnbfinal.Data;
 using Airbnbfinal.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Airbnbfinal.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class HotelController : Controller
     {
         private  Graduationproject1Context _context;
@@ -50,35 +52,7 @@ namespace Airbnbfinal.Controllers
 
             return View(hotel);
         }
-
-        // GET: Hotel/Create
-        public IActionResult Create()
-        {
-            ViewData["Category_Id"] = new SelectList(_context.Categories, "CategoryId", "CategoryId");
-            ViewData["City_Id"] = new SelectList(_context.Cities, "CityId", "CityId");
-            ViewData["Hotel_admin"] = new SelectList(_context.AspNetUsers, "Id", "Id");
-            return View();
-        }
-
-        // POST: Hotel/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Description,Address,Phone,Email,Website,Rate,Is_Available,City_Id,Category_Id,Hotel_admin")] Hotel hotel)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(hotel);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["Category_Id"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", hotel.Category_Id);
-            ViewData["City_Id"] = new SelectList(_context.Cities, "CityId", "CityId", hotel.City_Id);
-            ViewData["Hotel_admin"] = new SelectList(_context.AspNetUsers, "Id", "Id", hotel.Hotel_admin);
-            return View(hotel);
-        }
-
+        
         // GET: Hotel/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

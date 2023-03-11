@@ -28,12 +28,13 @@
                         <div class="droplistcontent dropdown-menu">
                             <partial name="_LoginPartial" />
                             <a asp-action="Create"  class="dropdown-item">Create </a>
-                            <a asp-action="Messages" class="dropdown-item">Messages</a>
-                   <a asp-area="Identity" asp-page="/Account/Logout"class="dropdown-item">Log out </a>
                             @if (signInManger.IsSignedIn(User) && User.IsInRole("Admin"))
                             {
-                                <a asp-action="Index" asp-controller="AdminDashBoard">admin</a>
+                                <a asp-action="Index" asp-controller="Hotel">admin</a>
                             }
+                            <a asp-action="Messages" class="dropdown-item">Messages</a>
+                   @*<a asp-area="Identity" asp-page="/Account/Logout"class="dropdown-item">Log out </a>*@
+                            
                         </div>
                     </div>
                 </div>

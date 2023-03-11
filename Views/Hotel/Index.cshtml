@@ -5,7 +5,7 @@
 }
 
     @*<button asp-action="Create" asp-controller="Hotel" class="create btn">Create</button>*@
-    <a asp-action="Create"  class="create btn">Create</a>
+<a asp-action="Create" asp-controller="Home" class="create btn">Create</a>
 
 <main>
     <nav class="sidebar">
@@ -15,15 +15,12 @@
             <li><i class="las la-city"></i><a href="/City/index">City</a></li>
             <li><i class="las la-bed"></i><a href="/Room/index">Rooms</a></li>
             <li><i class="las la-check-square"></i><a href="/Booking/index">Booking</a></li>
-            @*<li><i class="las la-users"></i><a href="#">Users</a></li>*@
-            <li><i class=Users></i><a asp-action="ManageUsers">users</a></li>
+            <li><i class="las la-users"></i><a asp-action="ManageUsers">users</a></li>
         </ul>
     </nav>
     </main>
 
-@*<p>
-    <a asp-action="Create">Create New</a>
-</p>*@
+
 <table class="table">
     <thead>
         <tr>
