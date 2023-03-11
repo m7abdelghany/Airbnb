@@ -65,7 +65,7 @@ namespace Airbnb.Models
                     .IsUnique()
                     .HasFilter("([NormalizedUserName] IS NOT NULL)");
 
-                entity.Property(e => e.Gender).HasDefaultValueSql("(CONVERT([bit],(0)))");
+                
             });
 
             modelBuilder.Entity<AspNetUserLogin>(entity =>

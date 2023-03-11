@@ -6,16 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Airbnb.Models;
+using Airbnbfinal.Data;
+using Airbnbfinal.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Airbnbfinal.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class HotelController : Controller
     {
-        private readonly Graduationproject1Context _context;
+        private  Graduationproject1Context _context;
+        private  UserManager <ApplicationUser> userManager;
 
-        public HotelController(Graduationproject1Context context)
+        public HotelController(Graduationproject1Context context , UserManager <ApplicationUser> userManager)
         {
             _context = context;
+            this.userManager = userManager;
         }
 
         // GET: Hotel
@@ -45,35 +52,7 @@ namespace Airbnbfinal.Controllers
 
             return View(hotel);
         }
-
-        // GET: Hotel/Create
-        public IActionResult Create()
-        {
-            ViewData["Category_Id"] = new SelectList(_context.Categories, "CategoryId", "CategoryId");
-            ViewData["City_Id"] = new SelectList(_context.Cities, "CityId", "CityId");
-            ViewData["Hotel_admin"] = new SelectList(_context.AspNetUsers, "Id", "Id");
-            return View();
-        }
-
-        // POST: Hotel/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Description,Address,Phone,Email,Website,Rate,Is_Available,City_Id,Category_Id,Hotel_admin")] Hotel hotel)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(hotel);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["Category_Id"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", hotel.Category_Id);
-            ViewData["City_Id"] = new SelectList(_context.Cities, "CityId", "CityId", hotel.City_Id);
-            ViewData["Hotel_admin"] = new SelectList(_context.AspNetUsers, "Id", "Id", hotel.Hotel_admin);
-            return View(hotel);
-        }
-
+        
         // GET: Hotel/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -187,6 +166,67 @@ namespace Airbnbfinal.Controllers
         {
           return _context.Hotels.Any(e => e.ID == id);
         }
+        public IActionResult ManageUsers()
+        {
+            var users = _context.AspNetUsers.ToList();
+            return View(users);
+        }
+        [HttpGet]
+        public IActionResult EditUser (string Id)
+        {
+            var user = _context.AspNetUsers.FirstOrDefault(a => a.Id == Id);
+            ViewBag.roles = new SelectList(_context.AspNetRoles.ToList(), "Id", "Name");
+            return View(user);
+        }
+        [HttpPost]
+        public async  Task<IActionResult> EditUser (string Id ,AspNetUser netUser, string Roles)
+        {
+           List< string> check = new List<string>();
+            List<AspNetRole> diserd = _context.AspNetRoles.ToList();
+            foreach (var item in diserd)
+            {
+                if (item.Id==Roles)
+                {
+                    check.Add( item.Name);
+                }
+            }
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            var user = await userManager.FindByIdAsync(Id);
+            if (user == null)
+            {
+                return NotFound();
+            }
 
+            if (ModelState.IsValid)
+            {
+                var role = await userManager.GetRolesAsync(user);
+                await userManager.RemoveFromRolesAsync(user, role);
+                await userManager.AddToRolesAsync(user, check);
+                _context.Update(netUser);
+                _context.SaveChanges();
+                var users = _context.AspNetUsers.ToList();
+                return RedirectToAction("ManageUsers", users);
+            }
+            return View(user);
+            
+        }
+        public async Task<IActionResult> DeleteUser(string Id)
+        {
+            if (Id==null)
+            {
+                return NotFound();
+            }
+            var user = await userManager.FindByIdAsync(Id);
+            if (user==null)
+            {
+                return NotFound();
+            }
+            await userManager.DeleteAsync(user);
+            var users = _context.AspNetUsers.ToList();
+            return RedirectToAction("ManageUsers",users);
+        }
     }
 }

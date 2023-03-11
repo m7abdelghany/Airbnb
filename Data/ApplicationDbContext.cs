@@ -9,7 +9,6 @@ namespace Airbnbfinal.Data
         public String FirstName { get; set; }
         public String LastName { get; set; }
         public int? Age { get; set; }
-        public Boolean Gender { get; set; }
         
     }
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -48,6 +48,7 @@ namespace Airbnbfinal.Controllers
         
         [Authorize]
         [HttpGet]
+        [Authorize]
         public IActionResult Create()
         {
             SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
@@ -60,8 +61,9 @@ namespace Airbnbfinal.Controllers
 
             return View();
         }
-        [Authorize]
         [HttpPost]
+        [Authorize]
+        
         public async Task<IActionResult> Create(Hotel h /*,int[] FacilitiesToAdd*/)
         {
             SelectList cities = new SelectList(db.Cities.ToList(), "CityId", "CityName");
