@@ -11,18 +11,19 @@
     <nav class="sidebar">
         <ul>
             
-            <li><i class="las la-hotel"></i><a href="/Hotel/index">Holel</a></li>
+            <li><i class="las la-hotel"></i><a href="/Hotel/index">Hotel</a></li>
             <li><i class="las la-city"></i><a href="/City/index">City</a></li>
             <li><i class="las la-bed"></i><a href="/Room/index">Rooms</a></li>
             <li><i class="las la-check-square"></i><a href="/Booking/index">Booking</a></li>
+            @*<li><i class="las la-users"></i><a href="#">Users</a></li>*@
             <li><i class=Users></i><a asp-action="ManageUsers">users</a></li>
         </ul>
     </nav>
     </main>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
 <table class="table">
     <thead>
         <tr>
@@ -39,18 +40,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
-            
-           
-            <th>
-                @Html.DisplayNameFor(model => model.Category)
-            </th>
+          
             <th>
                 @Html.DisplayNameFor(model => model.City)
             </th>
             
-            <th>
-                @Html.DisplayNameFor(model => model.Hotel_adminNavigation)
-            </th>
+           
             <th>
                 @Html.DisplayNameFor(model => model.Facilities)
             </th>
@@ -74,16 +69,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Website)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rate)
-            </td>
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.Category.CategoryName)
-            </td>
+             
+          
             <td>
                 @Html.DisplayFor(modelItem => item.City.CityName)
             </td>
@@ -100,8 +87,8 @@
                 </td>
             <td>
                 <div class="action">
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
                     </div>
             </td>

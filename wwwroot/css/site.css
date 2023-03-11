@@ -438,7 +438,22 @@ footer {
     color: white;
     position: absolute;
     left: 20rem;
-    top: 24.5rem;
+    top: 45rem;
+}
+.colorbtn4 {
+    
+    background-color: var(--pink);
+    color: white;
+    position: absolute;
+    left: 24rem;
+    top: 24.2rem;
+}
+.bcreatebtn {
+    background-color: var(--pink);
+    color: white;
+    position: absolute;
+    left: 24rem;
+    top: 24.2rem;
 }
 .colordetails {
     display: flex;
@@ -458,7 +473,16 @@ footer {
         margin: 10px;
     }
 .cityedit {
-    background-color:var(--pink) ;
-      color:white ; 
-      margin-top:5px;
+    background-color: var(--pink);
+    color: white;
+    position: absolute;
+    left: 25rem;
+    top: 10.6rem;
+}
+.redit {
+    background-color: var(--pink);
+    color: white;
+    position: absolute;
+    left: 25rem;
+    top: 25.5rem;
 }
