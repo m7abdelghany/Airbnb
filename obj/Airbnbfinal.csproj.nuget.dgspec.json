@@ -73,6 +73,10 @@
             "Stripe.net": {
               "target": "Package",
               "version": "[41.0.0, )"
+            },
+            "jQuery.UI.Combined": {
+              "target": "Package",
+              "version": "[1.13.2, )"
             }
           },
           "imports": [

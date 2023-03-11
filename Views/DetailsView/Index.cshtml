@@ -56,12 +56,32 @@
 </div>
 
 @*calender*@
+<style>
+
+    h4 {
+        display: flex;
+        align-items: center;
+    }
+
+    span::after {
+        padding-left: 5px;
+    }
+    
+   
+
+    
+</style>
 <div class="row" id="section-to-trigger">
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Calender from</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h4 class="card-title">Check-In</h4>
+                <p>With supporting text below as a natural lead-in to additional content.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut velit hendrerit, elementum ex id, vestibulum tellus. Sed non orci ac lacus aliquam sagittis ut eget neque. Nullam sagittis turpis vel eros tristique, a facilisis orci hendrerit. Donec imperdiet rhoncus velit, sit amet sodales lorem venenatis ac. Sed sed nulla quis quam faucibus aliquam vitae sed purus.</p>
+                <p>
+                    Choose your preferred check-In date:
+                    <input type="date" class="datepicker" data-date-format="mm/dd/yyyy">
+
+                </p>
         
       </div>
     </div>
@@ -70,12 +90,19 @@
 <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Calender to</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-       
-      </div>
+        <h4 class="card-title">Check-Out</h4>
+                <p>With supporting text below as a natural lead-in to additional content.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut velit hendrerit, elementum ex id, vestibulum tellus. Sed non orci ac lacus aliquam sagittis ut eget neque. Nullam sagittis turpis vel eros tristique, a facilisis orci hendrerit. Donec imperdiet rhoncus velit, sit amet sodales lorem venenatis ac. Sed sed nulla quis quam faucibus aliquam vitae sed purus.</p>
+        
+                <p>
+                    Choose your preferred check-Out date:
+                     <input type="date" class="datepicker" data-date-format="mm/dd/yyyy">
+
+                </p>
+            </div>
     </div>
   </div>
+
+    
 
     <div class="col-sm-5" id="fixed-card">
   <div class="card">
@@ -95,6 +122,8 @@
   </div>
 
   </div>
+
+
 
   <style>
     #fixed-card {

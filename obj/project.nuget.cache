@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KiQ6BYljN/mLaSahsMv2l3vBGh/MjLYdgqiFP4OHs6GZV9jDxi5Gl3lZT3L30ojCM6dzXyCqnRCqar8YfmxBPw==",
+  "dgSpecHash": "5wTGt+br8l6LBOHn3eFdVznKeX6MyXJO1ol+jpfko0waGU4pyE1aw+8NzAs8svmlBfWp5a8gjH4UUgIX1qJLqQ==",
   "success": true,
   "projectFilePath": "A:\\airbnb AANN\\Airbnb\\Airbnbfinal.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\erikej.entityframeworkcore.sqlserver.dateonlytimeonly\\6.0.1\\erikej.entityframeworkcore.sqlserver.dateonlytimeonly.6.0.1.nupkg.sha512",
     "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\jquery\\2.0.0\\jquery.2.0.0.nupkg.sha512",
+    "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\jquery.ui.combined\\1.13.2\\jquery.ui.combined.1.13.2.nupkg.sha512",
     "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
@@ -194,5 +196,16 @@
     "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Shrouk Mahmoud\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "jQuery.UI.Combined 1.13.2 depends on jQuery (>= 1.13.1) but jQuery 1.13.1 was not found. An approximate best match of jQuery 2.0.0 was resolved.",
+      "libraryId": "jQuery",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
