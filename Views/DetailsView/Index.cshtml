@@ -56,12 +56,31 @@
 </div>
 
 @*calender*@
+<style>
+
+    h4 {
+        display: flex;
+        align-items: center;
+    }
+
+    span::after {
+        padding-left: 5px;
+    }
+    
+   
+
+    
+</style>
 <div class="row" id="section-to-trigger">
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Calender from</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h4 class="card-title">Check-In</h4>
+                <p>
+                    Choose your preferred check-In date:
+                    <input type="date" class="datepicker" data-date-format="mm/dd/yyyy">
+
+                </p>
         
       </div>
     </div>
@@ -70,31 +89,44 @@
 <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Calender to</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-       
-      </div>
+        <h4 class="card-title">Check-Out</h4>
+        
+                <p>
+                    Choose your preferred check-Out date:
+                     <input type="date" class="datepicker" data-date-format="mm/dd/yyyy">
+
+                </p>
+            </div>
     </div>
   </div>
+
+    
 
     <div class="col-sm-5" id="fixed-card">
   <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Payment</h5>
+                <div class="text-black-50" > @Model.Name </div>
+                <h4 class="card-title  text-dark" >@Model.Room_Price EGP</h4> <hr />
+        @Model.City <br />
+
+        @Model.Address<br />
+        Check-In : <br />
+        @DateTimeOffset.Now
+        <hr />
                 <p class="card-text">
-                    With supporting text below as a natural lead-in to additional content.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut velit hendrerit, elementum ex id, vestibulum tellus. Sed non orci ac lacus aliquam sagittis ut eget neque. Nullam sagittis turpis vel eros tristique, a facilisis orci hendrerit. Donec imperdiet rhoncus velit, sit amet sodales lorem venenatis ac. Sed sed nulla quis quam faucibus aliquam vitae sed purus. Quisque pellentesque luctus eros quis fermentum. Sed eget semper urna. Nam eu est enim
-                    With supporting text below as a natural lead-in to additional content.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut velit hendrerit, elementum ex id, vestibulum tellus. Sed non orci ac lacus aliquam sagittis ut eget neque. Nullam sagittis turpis vel eros tristique, a facilisis orci hendrerit. Donec imperdiet rhoncus velit, sit amet sodales lorem venenatis ac. Sed sed nulla quis quam faucibus aliquam vitae sed purus. Quisque pellentesque luctus eros quis fermentum. Sed eget semper urna. Nam eu est enim
                              
           </p>
-                
-
-
-                               <a href="@Model.HotelPayment"  class="btn btn-primary center-btn" style="background-color:#F12954;">Reserve</a>
+          <a href="@Model.HotelPayment"  class="btn btn-primary center-btn" style="background-color:#F12954;">Reserve</a>
+                               <br />
+                               
+           <p class="text-black-50" align="center">You won't be charged yet <br /> Continue to checkout..</p>
           </div>
     </div>
   </div>
 
   </div>
+
+
 
   <style>
     #fixed-card {

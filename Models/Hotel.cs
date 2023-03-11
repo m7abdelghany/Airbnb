@@ -44,6 +44,8 @@ namespace Airbnb.Models
         public DateTime? DateFrom { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime? DateTo { get; set; }
+        [Column("Room-Price", TypeName = "decimal(18, 0)")]
+        public decimal? Room_Price { get; set; }
 
         [ForeignKey("Category_Id")]
         [InverseProperty("Hotels")]
@@ -66,6 +68,5 @@ namespace Airbnb.Models
         [ForeignKey("Hotel_Id")]
         [InverseProperty("Hotels")]
         public virtual ICollection<Facility> Facilities { get; set; }
-        
     }
 }
