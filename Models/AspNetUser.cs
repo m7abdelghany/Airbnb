@@ -46,6 +46,7 @@ namespace Airbnb.Models
         public int? Age { get; set; }
         public string FirstName { get; set; }
         [Required]
+        public bool? Gender { get; set; }
         public string LastName { get; set; }
 
         [InverseProperty("User")]
